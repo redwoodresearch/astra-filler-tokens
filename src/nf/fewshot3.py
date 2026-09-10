@@ -29,7 +29,7 @@ def _valid(df):
     df = df[(df.status == "completed") & df.model_eff.isin(MODELS)]
     ant = df.get("served_provider", pd.Series(index=df.index, dtype=object)).eq("anthropic")
     rt = df.reasoning_tokens.fillna(0)
-    return df[((rt <= 10) & ant) | ((rt == 0) & ~ant)]
+    return df[ant | ((rt == 0) & ~ant)]
 
 
 def _pair(d, base_sel, filler_sel):

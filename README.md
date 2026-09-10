@@ -106,6 +106,10 @@ Each has figures under `<tag>/figs/` and, where an analysis module exists, the c
 
 - Astra's training cutoff is 2026-04-30. AIME/HMMT (latest Feb 2026), HLE and the public LiveBench items predate it;
   AIME-Plus-Plus (posted 2026-08-26) and everything generated locally do not.
+- Exclusions are small and audited (`uv run -m nf.exclusions`; details and the hidden-reasoning check in `docs/EXCLUSIONS.md`): of 122,598 stored calls behind the post's figures,
+  835 (0.7%) are excluded — 746 Opus 5 refusals, 79 truncated outputs, 10 calls where the OpenAI/OpenRouter API reported
+  hidden reasoning tokens. Anthropic calls run with thinking disabled, so none are excluded on the reasoning-token
+  estimate (which is a tokenizer artefact on long answers); OpenAI/OpenRouter calls with any reasoning tokens are dropped.
 - Claude Opus 5 with thinking off returns `stop_reason: refusal` on some filler cells (e.g. most 4,096-dot calls); refused
   calls are excluded and figures drop dose points where fewer than half the problems were answered.
 - HLE is scored with the official judge prompt (gpt-4.1) and, separately, by string match; both are in the tables.

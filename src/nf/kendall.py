@@ -16,7 +16,7 @@ if __name__ == "__main__":
     df = df[(df.arm != "B") | (df.k == 0)]
     rt = df.reasoning_tokens.fillna(0)
     ant = df.get("served_provider", pd.Series(index=df.index, dtype=object)).eq("anthropic")
-    df = df[(df.status != "refusal") & ((rt <= 10) & ant | (rt == 0) & ~ant)]
+    df = df[(df.status != "refusal") & (ant | (rt == 0) & ~ant)]
     df = df[~((df.model_eff == "claude-opus-5:off") & (df.arm.isin(["XC", "DC"])))]  # API refused this arm
     df = to_dot_counts(df)
     df["arm"] = df.arm.map({"DB": "XB", "DC": "XC"}).fillna(df.arm)

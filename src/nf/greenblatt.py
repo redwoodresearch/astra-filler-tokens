@@ -49,7 +49,7 @@ if __name__ == "__main__":
     df = df[(df.arm != "B") | (df.k == 0)]
     rt = df.reasoning_tokens.fillna(0)
     ant = df.get("served_provider", pd.Series(index=df.index, dtype=object)).eq("anthropic")
-    df = df[(df.status != "refusal") & ((rt <= 10) & ant | (rt == 0) & ~ant)]
+    df = df[(df.status != "refusal") & (ant | (rt == 0) & ~ant)]
     df["x"] = np.where(df.arm == "B", 0, df.get("filler_tokens", df.k).fillna(df.k))
     done = (
         df[df.arm == "B"].groupby("model_eff").size()

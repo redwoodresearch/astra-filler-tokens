@@ -40,7 +40,7 @@ def _prep(df):
     df = df[df.status.isin(["completed"]) & df.task.isin(["aimepp", "arith"]) & df.model_eff.isin(MODELS)]
     ant = df.get("served_provider", pd.Series(index=df.index, dtype=object)).eq("anthropic")
     rt = df.reasoning_tokens.fillna(0)
-    df = df[((rt <= 10) & ant) | ((rt == 0) & ~ant)]
+    df = df[ant | ((rt == 0) & ~ant)]
     df = df[((df.arm == "B") & (df.k == 0)) | ((df.arm == "CB") & df.k.isin([300, 1000]))].copy()
     # AIME-Plus-Plus: AIME tier as depth "AIME", all tiers as depth "all"
     a = df[df.task == "aimepp"].copy()

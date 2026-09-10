@@ -24,7 +24,7 @@ def main():
     df = df[(df.task == "nhop") & (df.status == "completed") & (df.status != "refusal")]
     ant = df.get("served_provider", pd.Series(index=df.index, dtype=object)).eq("anthropic")
     rt = df.reasoning_tokens.fillna(0)
-    df = df[((rt <= 10) & ant) | ((rt == 0) & ~ant)]
+    df = df[ant | ((rt == 0) & ~ant)]
     df = df[((df.arm == "B") & (df.k == 0)) | ((df.arm == "CB") & df.k.isin([300, 1000]))]
     rows = []
     for me, dm in df.groupby("model_eff"):

@@ -50,7 +50,7 @@ if __name__ == "__main__":
     # threshold there; OpenAI/OpenRouter report the field directly and 0 means none.
     rt = df.reasoning_tokens.fillna(0)
     ant = df.get("served_provider", pd.Series(index=df.index, dtype=object)).eq("anthropic")
-    df = df[(df.status != "refusal") & ((rt <= 10) & ant | (rt == 0) & ~ant)]
+    df = df[(df.status != "refusal") & (ant | (rt == 0) & ~ant)]
     print(f"dropped {n0 - len(df)} of {n0} rows (refusals or reasoning_tokens>0)")
     if U != "B":
         df = df[(df.arm != "B") | (df.k == 0)]
