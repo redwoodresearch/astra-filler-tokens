@@ -1,0 +1,46 @@
+task,cond,n,acc,reasoning_median,reasoning_mean,reasoning_p90,output_mean,incomplete,acc_judge
+Gen-Arithmetic 15 ops,"no CoT, no filler",100,0.5,,,,,,
+Gen-Arithmetic 15 ops,"no CoT, counting 1..1000",100,0.92,,,,,,
+Gen-Arithmetic 15 ops,reasoning allowed (effort low),100,0.99,90.0,93.18,126.10000000000001,225.27,0.0,
+Gen-Arithmetic 10 ops,"no CoT, no filler",100,0.7,,,,,,
+Gen-Arithmetic 10 ops,"no CoT, counting 1..1000",100,1.0,,,,,,
+Gen-Arithmetic 10 ops,reasoning allowed (effort low),100,0.99,56.5,59.01,87.10000000000001,156.05,0.0,
+"AIME-Plus-Plus
+AIME tier","no CoT, no filler",34,0.6470588235294118,,,,,,
+"AIME-Plus-Plus
+AIME tier","no CoT, counting 1..1000",34,0.8823529411764706,,,,,,
+"AIME-Plus-Plus
+AIME tier",reasoning allowed (effort low),34,1.0,81.0,124.61764705882354,315.2999999999999,323.3529411764706,0.0,
+"AIME-Plus-Plus
+all 157","no CoT, no filler",153,0.1568627450980392,,,,,,
+"AIME-Plus-Plus
+all 157","no CoT, counting 1..1000",157,0.21019108280254778,,,,,,
+"AIME-Plus-Plus
+all 157",reasoning allowed (effort low),157,0.6369426751592356,1552.0,2302.0955414012737,4869.8,2923.853503184713,0.0,
+LiveBench,"no CoT, no filler",618,0.656957928802589,,,,,,
+LiveBench,"no CoT, counting 1..1000",618,0.7621359223300971,,,,,,
+LiveBench,reasoning allowed (effort low),618,0.8802588996763754,48.0,105.1294498381877,216.60000000000014,248.98705501618122,0.0,
+HLE,"no CoT, no filler",2157,0.22624014835419565,,,,,,0.27816411682892905
+HLE,"no CoT, counting 1..1000",2158,0.3262279888785913,,,,,,0.4068582020389249
+HLE,reasoning allowed (effort low),2158,0.3623725671918443,259.0,537.2460611677479,1341.6,805.179796107507,0.0,0.4749768303985171
+LB math_comp,"no CoT, no filler",146,0.7876712328767124,,,,,,
+LB math_comp,"no CoT, counting 1..1000",146,0.9452054794520548,,,,,,
+LB math_comp,reasoning allowed (effort low),146,0.9931506849315068,41.5,89.22602739726027,190.0,297.972602739726,0.0,
+LB AMPS_Hard,"no CoT, no filler",150,0.5066666666666667,,,,,,
+LB AMPS_Hard,"no CoT, counting 1..1000",150,0.5733333333333334,,,,,,
+LB AMPS_Hard,reasoning allowed (effort low),150,0.8866666666666667,71.0,100.70666666666666,162.89999999999995,235.90666666666667,0.0,
+LB olympiad,"no CoT, no filler",72,0.5972222222222222,,,,,,
+LB olympiad,"no CoT, counting 1..1000",72,0.6388888888888888,,,,,,
+LB olympiad,reasoning allowed (effort low),72,0.6527777777777778,22.5,61.77777777777778,148.7,250.52777777777777,0.0,
+LB zebra_puzzle,"no CoT, no filler",100,0.52,,,,,,
+LB zebra_puzzle,"no CoT, counting 1..1000",100,0.74,,,,,,
+LB zebra_puzzle,reasoning allowed (effort low),100,0.91,121.5,242.34,588.2,382.03,0.0,
+LB spatial,"no CoT, no filler",50,0.68,,,,,,
+LB spatial,"no CoT, counting 1..1000",50,0.82,,,,,,
+LB spatial,reasoning allowed (effort low),50,0.86,77.5,105.28,222.60000000000002,203.44,0.0,
+LB web_of_lies_v2,"no CoT, no filler",50,1.0,,,,,,
+LB web_of_lies_v2,"no CoT, counting 1..1000",50,1.0,,,,,,
+LB web_of_lies_v2,reasoning allowed (effort low),50,1.0,25.0,23.56,33.1,127.6,0.0,
+LB cta,"no CoT, no filler",50,0.72,,,,,,
+LB cta,"no CoT, counting 1..1000",50,0.72,,,,,,
+LB cta,reasoning allowed (effort low),50,0.7,0.0,34.26,95.60000000000002,43.82,0.0,

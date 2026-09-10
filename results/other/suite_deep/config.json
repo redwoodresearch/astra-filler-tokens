@@ -1,0 +1,34 @@
+{
+ "tag": "suite_deep",
+ "models": [
+  "gpt-6-astra:low",
+  "gpt-5.6-sol:none",
+  "gpt-5.6-sol:low",
+  "gpt-5.5:none"
+ ],
+ "depths": [
+  24,
+  32,
+  48,
+  64
+ ],
+ "n": 40,
+ "seed": 0,
+ "tasks": [
+  "xor",
+  "stack"
+ ],
+ "arms": [
+  "B"
+ ],
+ "ks": [
+  0
+ ],
+ "cap_mult": 1.3,
+ "cap_add": 32,
+ "no_cap": false,
+ "concurrency": 32,
+ "log_every": 400,
+ "dry_run": false,
+ "key_env": null
+}

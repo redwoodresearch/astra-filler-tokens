@@ -1,0 +1,125 @@
+{
+  "method": "Bottom-up mechanical modelling: for each task I costed the elementary operation a pen-and-paper solver actually performs (a sorted-table lookup for perm, a mod-7 add/multiply for modchain, one rule-table application per cell in the CA light cone, one edge transcription plus BFS visit for reach, one push/pop/swap edit for stack, one flag toggle for xor), multiplied by the number of such operations at that depth, and added a fixed statement-reading overhead (10-20 s) plus a verification multiplier of 1.6-1.8x, since ~90% end-to-end reliability requires a genuine second pass rather than a spot check. Where a competent solver would shortcut rather than simulate (cycle detection in lookup, the backward light cone in ca) I used the shortcut cost, which is what makes lookup saturate with depth. Timings assume a STEM undergraduate who is careful but not practised on these specific formats.",
+  "rater": "independent subagent estimate, 2026-09-07",
+  "tasks": {
+    "perm": {
+      "rationale": "Each step is one lookup in a sorted 8-entry table (the source values are listed 1..8 in order, so it is a fixed-position glance, ~2.5 s including moving to the next line and holding the running value), plus ~12 s to read the setup and a full second pass to verify (x1.6).",
+      "seconds": {
+        "1": 16.0,
+        "2": 20.0,
+        "3": 24.0,
+        "4": 28.0,
+        "6": 36.0,
+        "8": 44.0,
+        "12": 60.0,
+        "16": 76.0,
+        "24": 108.0,
+        "32": 155.0,
+        "48": 225.0,
+        "64": 300.0
+      }
+    },
+    "lookup": {
+      "rationale": "Same shape as perm but the 10-entry table is a single fixed line, so each hop is faster (~1.5 s) and gets faster with familiarity; crucially the trajectory must enter a cycle within <=10 states, so from d~12-16 a competent solver detects the cycle and finishes with tail/period modular arithmetic, which caps the time near ~1 minute regardless of depth.",
+      "seconds": {
+        "1": 14.0,
+        "2": 17.0,
+        "3": 19.0,
+        "4": 22.0,
+        "6": 26.0,
+        "8": 31.0,
+        "12": 41.0,
+        "16": 48.0,
+        "24": 60.0,
+        "32": 65.0,
+        "48": 70.0,
+        "64": 75.0
+      }
+    },
+    "modchain": {
+      "rationale": "Each line is one add/subtract (~2 s) or a multiply mod 7 such as 5*6=30->2 (~4-5 s), averaging ~3 s per step with the running value written down; arithmetic slips are the main risk so the whole chain is recomputed to verify (x1.7), on top of ~10 s of preamble reading.",
+      "seconds": {
+        "1": 15.0,
+        "2": 20.0,
+        "3": 25.0,
+        "4": 30.0,
+        "6": 41.0,
+        "8": 51.0,
+        "12": 71.0,
+        "16": 92.0,
+        "24": 132.0,
+        "32": 180.0,
+        "48": 270.0,
+        "64": 355.0
+      }
+    },
+    "reach": {
+      "rationale": "Edges are given shuffled, so beyond d~2 the solver first transcribes ~1.5(d+7) edges into an adjacency list or a drawing (~3 s/edge), then runs a level-by-level BFS (~1.5 s/edge) and verifies (~0.8 s/edge: recheck the exact-length path for 'yes', redo the levels for 'no', since negatives sit at exactly d+1 hops). At d=1-2 no transcription is needed, just one or two scans of the ~11-edge list. Note the generator only supports d<=19 (26 letter labels), so d>=24 entries are hypothetical extrapolations.",
+      "seconds": {
+        "1": 25.0,
+        "2": 45.0,
+        "3": 68.0,
+        "4": 88.0,
+        "6": 108.0,
+        "8": 128.0,
+        "12": 160.0,
+        "16": 192.0,
+        "24": 255.0,
+        "32": 320.0,
+        "48": 445.0,
+        "64": 570.0
+      }
+    },
+    "ca": {
+      "rationale": "Only cell 5's backward light cone is needed: min(12, 2j+1) cells for the row j steps from the end, i.e. 1,4,9,16,36,60,108,156,252,348,540,732 cell updates for these depths. Each update means reading a triple from the row above and looking it up in the 8-entry rule (~2 s, ~1.8 s once the rule is memorized), and hitting 90% reliability over hundreds of updates forces a second pass (x1.8). This is by far the most laborious task at depth.",
+      "seconds": {
+        "1": 25.0,
+        "2": 35.0,
+        "3": 52.0,
+        "4": 78.0,
+        "6": 150.0,
+        "8": 235.0,
+        "12": 370.0,
+        "16": 525.0,
+        "24": 835.0,
+        "32": 1150.0,
+        "48": 1770.0,
+        "64": 2390.0
+      }
+    },
+    "stack": {
+      "rationale": "Each op is a trivial edit to a short written column (push = write, pop = cross out, swap = exchange the top two), ~2.3 s including reading the numbered line, with a full re-execution to verify (x1.6) and ~12 s of setup reading. Depth costs almost nothing beyond the linear transcription work.",
+      "seconds": {
+        "1": 16.0,
+        "2": 19.0,
+        "3": 23.0,
+        "4": 27.0,
+        "6": 34.0,
+        "8": 42.0,
+        "12": 56.0,
+        "16": 71.0,
+        "24": 101.0,
+        "32": 130.0,
+        "48": 190.0,
+        "64": 250.0
+      }
+    },
+    "xor": {
+      "rationale": "The flag sits at a fixed offset in each line, so the solver scans the flag column and either toggles a running parity or counts the 1s: ~1 s per record, plus a recount to verify (x1.8) and ~12 s to read the instructions. Cheapest task per unit depth; only place-keeping in a long list adds cost at d>=48.",
+      "seconds": {
+        "1": 14.0,
+        "2": 16.0,
+        "3": 17.0,
+        "4": 19.0,
+        "6": 23.0,
+        "8": 26.0,
+        "12": 34.0,
+        "16": 41.0,
+        "24": 55.0,
+        "32": 70.0,
+        "48": 100.0,
+        "64": 130.0
+      }
+    }
+  }
+}

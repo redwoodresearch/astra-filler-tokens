@@ -1,0 +1,31 @@
+{
+ "tag": "bench_hard",
+ "models": [
+  "gpt-6-astra:low"
+ ],
+ "depths": [
+  1
+ ],
+ "n": 618,
+ "seed": 0,
+ "tasks": [
+  "livebench"
+ ],
+ "arms": [
+  "B",
+  "CB"
+ ],
+ "ks": [
+  0,
+  300,
+  1000
+ ],
+ "cap_mult": 1.3,
+ "cap_add": 32,
+ "no_cap": false,
+ "concurrency": 40,
+ "log_every": 500,
+ "dry_run": false,
+ "estimate": false,
+ "key_env": null
+}

@@ -1,0 +1,36 @@
+{
+ "tag": "dots_rep",
+ "models": [
+  "ant/claude-opus-5@off"
+ ],
+ "depths": [
+  3
+ ],
+ "n": 200,
+ "seed": 1,
+ "tasks": [
+  "perm"
+ ],
+ "arms": [
+  "B",
+  "XB"
+ ],
+ "ks": [
+  0,
+  1,
+  5,
+  20,
+  70,
+  140,
+  340,
+  700
+ ],
+ "cap_mult": 1.3,
+ "cap_add": 32,
+ "no_cap": false,
+ "concurrency": 20,
+ "log_every": 500,
+ "dry_run": false,
+ "estimate": false,
+ "key_env": null
+}

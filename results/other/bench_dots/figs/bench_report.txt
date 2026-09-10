@@ -1,0 +1,222 @@
+           model_eff    task arm    k  filler_tokens   n  acc  baseline   gain  gain_se  parse  compliant  max_reasoning_tokens
+      gpt-4o:default   gsm8k  XB   20             20 100 0.52     0.515  0.005    0.061   1.00       1.00                     0
+      gpt-4o:default   gsm8k  XB  140            140 100 0.54     0.515  0.025    0.061   1.00       1.00                     0
+      gpt-4o:default   gsm8k  XB  700            700 100 0.55     0.515  0.035    0.061   1.00       1.00                     0
+      gpt-4o:default   gsm8k  XC   20             20 100 0.57     0.515  0.055    0.061   1.00       0.52                     0
+      gpt-4o:default   gsm8k  XC  140            140 100 0.55     0.515  0.035    0.061   1.00       0.51                     0
+      gpt-4o:default   gsm8k  XC  700            700 100 0.50     0.515 -0.015    0.061   0.99       0.00                     0
+      gpt-4o:default   gsm8k  CB   10             28 100 0.58     0.515  0.065    0.061   1.00       1.00                     0
+      gpt-4o:default   gsm8k  CB   50            148 100 0.54     0.515  0.025    0.061   1.00       1.00                     0
+      gpt-4o:default   gsm8k  CB  100            298 100 0.57     0.515  0.055    0.061   1.00       1.00                     0
+      gpt-4o:default   gsm8k  CB  500           1498 100 0.51     0.515 -0.005    0.061   1.00       1.00                     0
+      gpt-4o:default   gsm8k  CB 1000           2999 100 0.50     0.515 -0.015    0.061   1.00       1.00                     0
+      gpt-4o:default   gsm8k  CC   10             28 100 0.58     0.515  0.065    0.061   1.00       1.00                     0
+      gpt-4o:default   gsm8k  CC  100            298 100 0.53     0.515  0.015    0.061   1.00       1.00                     0
+      gpt-4o:default   gsm8k  RB    1             59 100 0.54     0.515  0.025    0.061   1.00       1.00                     0
+      gpt-4o:default   gsm8k  RB    3            177 100 0.58     0.515  0.065    0.061   1.00       1.00                     0
+      gpt-4o:default   gsm8k   C    1              0 100 0.50     0.515 -0.015    0.061   0.97       0.94                     0
+      gpt-4o:default   gsm8k   C    3              0 100 0.55     0.515  0.035    0.061   1.00       0.99                     0
+    gpt-5.6-sol:none   gsm8k  XB   20             20 100 0.87     0.865  0.005    0.041   1.00       1.00                     0
+    gpt-5.6-sol:none   gsm8k  XB  140            140 100 0.90     0.865  0.035    0.039   1.00       1.00                     0
+    gpt-5.6-sol:none   gsm8k  XB  700            700 100 0.89     0.865  0.025    0.040   1.00       1.00                     0
+    gpt-5.6-sol:none   gsm8k  XC   20             20 100 0.87     0.865  0.005    0.041   1.00       1.00                     0
+    gpt-5.6-sol:none   gsm8k  XC  140            140 100 0.90     0.865  0.035    0.039   1.00       1.00                     0
+    gpt-5.6-sol:none   gsm8k  XC  700            700 100 0.92     0.865  0.055    0.036   1.00       1.00                     0
+    gpt-5.6-sol:none   gsm8k  CB   10             28 100 0.89     0.865  0.025    0.040   1.00       1.00                     0
+    gpt-5.6-sol:none   gsm8k  CB   50            148 100 0.90     0.865  0.035    0.039   1.00       1.00                     0
+    gpt-5.6-sol:none   gsm8k  CB  100            298 100 0.91     0.865  0.045    0.037   1.00       1.00                     0
+    gpt-5.6-sol:none   gsm8k  CB  500           1498 100 0.91     0.865  0.045    0.037   1.00       1.00                     0
+    gpt-5.6-sol:none   gsm8k  CB 1000           2999 100 0.91     0.865  0.045    0.037   1.00       1.00                     0
+    gpt-5.6-sol:none   gsm8k  CC   10             28 100 0.89     0.865  0.025    0.040   1.00       1.00                     0
+    gpt-5.6-sol:none   gsm8k  CC  100            298 100 0.90     0.865  0.035    0.039   1.00       1.00                     0
+    gpt-5.6-sol:none   gsm8k  RB    1             59 100 0.88     0.865  0.015    0.040   1.00       1.00                     0
+    gpt-5.6-sol:none   gsm8k  RB    3            177 100 0.90     0.865  0.035    0.039   1.00       1.00                     0
+    gpt-5.6-sol:none   gsm8k   C    1              0 100 0.88     0.865  0.015    0.040   1.00       1.00                     0
+    gpt-5.6-sol:none   gsm8k   C    3              0 100 0.90     0.865  0.035    0.039   1.00       1.00                     0
+claude-fable-5-1:low   gsm8k  XB   20             20 100 0.92     0.915  0.005    0.034   1.00       0.99                     6
+claude-fable-5-1:low   gsm8k  XB  140            140 100 0.91     0.915 -0.005    0.035   1.00       1.00                     4
+claude-fable-5-1:low   gsm8k  XB  700            700 100 0.92     0.915  0.005    0.034   1.00       1.00                     4
+claude-fable-5-1:low   gsm8k  XC   20             20 100 0.92     0.915  0.005    0.034   1.00       1.00                     6
+claude-fable-5-1:low   gsm8k  XC  140            140 100 0.92     0.915  0.005    0.034   1.00       1.00                    18
+claude-fable-5-1:low   gsm8k  XC  700            700 100 0.91     0.915 -0.005    0.035   1.00       1.00                    74
+claude-fable-5-1:low   gsm8k  CB   10             28 100 0.93     0.915  0.015    0.032   0.99       0.99                     8
+claude-fable-5-1:low   gsm8k  CB   50            148 100 0.92     0.915  0.005    0.034   0.99       0.99                     8
+claude-fable-5-1:low   gsm8k  CB  100            298 100 0.92     0.915  0.005    0.034   0.99       0.99                     8
+claude-fable-5-1:low   gsm8k  CB  500           1498 100 0.91     0.915 -0.005    0.035   1.00       1.00                     4
+claude-fable-5-1:low   gsm8k  CB 1000           2999 100 0.91     0.915 -0.005    0.035   1.00       0.99                     6
+claude-fable-5-1:low   gsm8k  CC   10             28 100 0.92     0.915  0.005    0.034   1.00       1.00                     4
+claude-fable-5-1:low   gsm8k  CC  100            298 100 0.92     0.915  0.005    0.034   1.00       1.00                     4
+claude-fable-5-1:low   gsm8k  RB    1             59 100 0.92     0.915  0.005    0.034   0.99       0.99                     6
+claude-fable-5-1:low   gsm8k  RB    3            177 100 0.92     0.915  0.005    0.034   0.99       0.99                     7
+claude-fable-5-1:low   gsm8k   C    1              0 100 0.89     0.915 -0.025    0.037   0.97       0.97                    66
+claude-fable-5-1:low   gsm8k   C    3              0 100 0.44     0.915 -0.475    0.053   0.49       0.49                   175
+     gpt-6-astra:low   gsm8k  XB   20             20 100 0.94     0.940  0.000    0.029   1.00       1.00                     0
+     gpt-6-astra:low   gsm8k  XB  140            140 100 0.96     0.940  0.020    0.026   1.00       1.00                     0
+     gpt-6-astra:low   gsm8k  XB  700            700 100 0.94     0.940  0.000    0.029   1.00       1.00                     0
+     gpt-6-astra:low   gsm8k  XC   20             20 100 0.93     0.940 -0.010    0.031   1.00       1.00                     0
+     gpt-6-astra:low   gsm8k  XC  140            140 100 0.96     0.940  0.020    0.026   1.00       1.00                     0
+     gpt-6-astra:low   gsm8k  XC  700            700 100 0.95     0.940  0.010    0.028   1.00       1.00                     0
+     gpt-6-astra:low   gsm8k  CB   10             28 100 0.95     0.940  0.010    0.028   1.00       1.00                     0
+     gpt-6-astra:low   gsm8k  CB   50            148 100 0.95     0.940  0.010    0.028   1.00       1.00                     0
+     gpt-6-astra:low   gsm8k  CB  100            298 100 0.95     0.940  0.010    0.028   1.00       1.00                     0
+     gpt-6-astra:low   gsm8k  CB  500           1498 100 0.95     0.940  0.010    0.028   1.00       1.00                     0
+     gpt-6-astra:low   gsm8k  CB 1000           2999 100 0.95     0.940  0.010    0.028   1.00       1.00                     0
+     gpt-6-astra:low   gsm8k  CC   10             28 100 0.94     0.940  0.000    0.029   1.00       1.00                     0
+     gpt-6-astra:low   gsm8k  CC  100            298 100 0.96     0.940  0.020    0.026   1.00       1.00                     0
+     gpt-6-astra:low   gsm8k  RB    1             59 100 0.96     0.940  0.020    0.026   1.00       1.00                     0
+     gpt-6-astra:low   gsm8k  RB    3            177 100 0.96     0.940  0.020    0.026   1.00       1.00                     0
+     gpt-6-astra:low   gsm8k   C    1              0 100 0.94     0.940  0.000    0.029   1.00       1.00                     0
+     gpt-6-astra:low   gsm8k   C    3              0 100 0.95     0.940  0.010    0.028   1.00       1.00                     0
+      gpt-4o:default    gpqa  XB   20             20 100 0.34     0.415 -0.075    0.059   1.00       1.00                     0
+      gpt-4o:default    gpqa  XB  140            140 100 0.42     0.415  0.005    0.060   1.00       1.00                     0
+      gpt-4o:default    gpqa  XB  700            700 100 0.34     0.415 -0.075    0.059   1.00       1.00                     0
+      gpt-4o:default    gpqa  XC   20             20 100 0.39     0.415 -0.025    0.060   1.00       0.12                     0
+      gpt-4o:default    gpqa  XC  140            140 100 0.37     0.415 -0.045    0.060   0.99       0.06                     0
+      gpt-4o:default    gpqa  XC  700            700 100 0.34     0.415 -0.075    0.059   0.99       0.00                     0
+      gpt-4o:default    gpqa  CB   10             28 100 0.43     0.415  0.015    0.061   1.00       1.00                     0
+      gpt-4o:default    gpqa  CB   50            148 100 0.34     0.415 -0.075    0.059   1.00       1.00                     0
+      gpt-4o:default    gpqa  CB  100            298 100 0.35     0.415 -0.065    0.059   1.00       1.00                     0
+      gpt-4o:default    gpqa  CB  500           1498 100 0.35     0.415 -0.065    0.059   1.00       1.00                     0
+      gpt-4o:default    gpqa  CB 1000           2999 100 0.37     0.415 -0.045    0.060   1.00       1.00                     0
+      gpt-4o:default    gpqa  CC   10             28 100 0.38     0.415 -0.035    0.060   1.00       1.00                     0
+      gpt-4o:default    gpqa  CC  100            298 100 0.33     0.415 -0.085    0.059   1.00       1.00                     0
+      gpt-4o:default    gpqa  RB    1            206 100 0.40     0.415 -0.015    0.060   1.00       1.00                     0
+      gpt-4o:default    gpqa  RB    3            621 100 0.39     0.415 -0.025    0.060   1.00       1.00                     0
+      gpt-4o:default    gpqa   C    1              0 100 0.44     0.415  0.025    0.061   0.99       0.70                     0
+      gpt-4o:default    gpqa   C    3              0 100 0.42     0.415  0.005    0.060   1.00       0.72                     0
+    gpt-5.6-sol:none    gpqa  XB   20             20 100 0.58     0.585 -0.005    0.060   1.00       1.00                     0
+    gpt-5.6-sol:none    gpqa  XB  140            140 100 0.58     0.585 -0.005    0.060   1.00       1.00                     0
+    gpt-5.6-sol:none    gpqa  XB  700            700 100 0.66     0.585  0.075    0.059   1.00       1.00                     0
+    gpt-5.6-sol:none    gpqa  XC   20             20 100 0.63     0.585  0.045    0.060   1.00       0.96                     0
+    gpt-5.6-sol:none    gpqa  XC  140            140 100 0.63     0.585  0.045    0.060   1.00       0.99                     0
+    gpt-5.6-sol:none    gpqa  XC  700            700 100 0.67     0.585  0.085    0.059   1.00       0.97                     0
+    gpt-5.6-sol:none    gpqa  CB   10             28 100 0.62     0.585  0.035    0.060   1.00       1.00                     0
+    gpt-5.6-sol:none    gpqa  CB   50            148 100 0.65     0.585  0.065    0.059   1.00       1.00                     0
+    gpt-5.6-sol:none    gpqa  CB  100            298 100 0.66     0.585  0.075    0.059   1.00       1.00                     0
+    gpt-5.6-sol:none    gpqa  CB  500           1498 100 0.64     0.585  0.055    0.059   1.00       1.00                     0
+    gpt-5.6-sol:none    gpqa  CB 1000           2999 100 0.71     0.585  0.125    0.057   1.00       1.00                     0
+    gpt-5.6-sol:none    gpqa  CC   10             28 100 0.60     0.585  0.015    0.060   1.00       1.00                     0
+    gpt-5.6-sol:none    gpqa  CC  100            298 100 0.66     0.585  0.075    0.059   1.00       1.00                     0
+    gpt-5.6-sol:none    gpqa  RB    1            206 100 0.68     0.585  0.095    0.058   1.00       1.00                     0
+    gpt-5.6-sol:none    gpqa  RB    3            621 100 0.65     0.585  0.065    0.059   1.00       1.00                     0
+    gpt-5.6-sol:none    gpqa   C    1              0 100 0.63     0.585  0.045    0.060   1.00       1.00                     0
+    gpt-5.6-sol:none    gpqa   C    3              0 100 0.67     0.585  0.085    0.059   1.00       1.00                     0
+claude-fable-5-1:low    gpqa  XB   20             20 100 0.78     0.815 -0.035    0.050   0.96       0.96                     4
+claude-fable-5-1:low    gpqa  XB  140            140 100 0.82     0.815  0.005    0.047   0.97       0.97                     4
+claude-fable-5-1:low    gpqa  XB  700            700 100 0.80     0.815 -0.015    0.049   0.96       0.96                     4
+claude-fable-5-1:low    gpqa  XC   20             20 100 0.80     0.815 -0.015    0.049   0.97       0.97                     6
+claude-fable-5-1:low    gpqa  XC  140            140 100 0.83     0.815  0.015    0.047   0.96       0.96                    18
+claude-fable-5-1:low    gpqa  XC  700            700 100 0.79     0.815 -0.025    0.049   0.96       0.96                    74
+claude-fable-5-1:low    gpqa  CB   10             28 100 0.76     0.815 -0.055    0.051   0.96       0.96                     4
+claude-fable-5-1:low    gpqa  CB   50            148 100 0.80     0.815 -0.015    0.049   0.96       0.96                     4
+claude-fable-5-1:low    gpqa  CB  100            298 100 0.79     0.815 -0.025    0.049   0.95       0.94                    13
+claude-fable-5-1:low    gpqa  CB  500           1498 100 0.83     0.815  0.015    0.047   0.96       0.96                     4
+claude-fable-5-1:low    gpqa  CB 1000           2999 100 0.81     0.815 -0.005    0.048   0.95       0.95                     7
+claude-fable-5-1:low    gpqa  CC   10             28 100 0.80     0.815 -0.015    0.049   0.96       0.96                     4
+claude-fable-5-1:low    gpqa  CC  100            298 100 0.81     0.815 -0.005    0.048   0.96       0.96                     4
+claude-fable-5-1:low    gpqa  RB    1            206 100 0.82     0.815  0.005    0.047   0.97       0.97                     4
+claude-fable-5-1:low    gpqa  RB    3            621 100 0.81     0.815 -0.005    0.048   0.96       0.96                     4
+claude-fable-5-1:low    gpqa   C    1              0 100 0.55     0.815 -0.265    0.057   0.65       0.65                   387
+claude-fable-5-1:low    gpqa   C    3              0 100 0.23     0.815 -0.585    0.050   0.28       0.28                  1142
+     gpt-6-astra:low    gpqa  XB   20             20 100 0.89     0.855  0.035    0.040   1.00       1.00                     0
+     gpt-6-astra:low    gpqa  XB  140            140 100 0.87     0.855  0.015    0.042   1.00       1.00                     0
+     gpt-6-astra:low    gpqa  XB  700            700 100 0.94     0.855  0.085    0.034   1.00       1.00                     0
+     gpt-6-astra:low    gpqa  XC   20             20 100 0.86     0.855  0.005    0.043   1.00       1.00                     0
+     gpt-6-astra:low    gpqa  XC  140            140 100 0.90     0.855  0.045    0.039   1.00       1.00                     0
+     gpt-6-astra:low    gpqa  XC  700            700 100 0.89     0.855  0.035    0.040   1.00       1.00                     0
+     gpt-6-astra:low    gpqa  CB   10             28 100 0.89     0.855  0.035    0.040   1.00       1.00                     0
+     gpt-6-astra:low    gpqa  CB   50            148 100 0.91     0.855  0.055    0.038   1.00       1.00                     0
+     gpt-6-astra:low    gpqa  CB  100            298 100 0.91     0.855  0.055    0.038   1.00       1.00                     0
+     gpt-6-astra:low    gpqa  CB  500           1498 100 0.94     0.855  0.085    0.034   1.00       1.00                     0
+     gpt-6-astra:low    gpqa  CB 1000           2999 100 0.95     0.855  0.095    0.033   1.00       1.00                     0
+     gpt-6-astra:low    gpqa  CC   10             28 100 0.87     0.855  0.015    0.042   1.00       1.00                     0
+     gpt-6-astra:low    gpqa  CC  100            298 100 0.89     0.855  0.035    0.040   1.00       1.00                     0
+     gpt-6-astra:low    gpqa  RB    1            206 100 0.89     0.855  0.035    0.040   1.00       1.00                     0
+     gpt-6-astra:low    gpqa  RB    3            621 100 0.93     0.855  0.075    0.036   1.00       1.00                     0
+     gpt-6-astra:low    gpqa   C    1              0 100 0.89     0.855  0.035    0.040   1.00       0.99                     0
+     gpt-6-astra:low    gpqa   C    3              0 100 0.88     0.855  0.025    0.041   1.00       1.00                     0
+      gpt-4o:default mmlupro  XB   20             20 100 0.37     0.320  0.050    0.058   1.00       1.00                     0
+      gpt-4o:default mmlupro  XB  140            140 100 0.37     0.320  0.050    0.058   1.00       1.00                     0
+      gpt-4o:default mmlupro  XB  700            700 100 0.35     0.320  0.030    0.058   1.00       1.00                     0
+      gpt-4o:default mmlupro  XC   20             20 100 0.38     0.320  0.060    0.059   1.00       0.34                     0
+      gpt-4o:default mmlupro  XC  140            140 100 0.38     0.320  0.060    0.059   1.00       0.29                     0
+      gpt-4o:default mmlupro  XC  700            700 100 0.35     0.320  0.030    0.058   1.00       0.00                     0
+      gpt-4o:default mmlupro  CB   10             28 100 0.43     0.320  0.110    0.059   1.00       1.00                     0
+      gpt-4o:default mmlupro  CB   50            148 100 0.38     0.320  0.060    0.059   1.00       1.00                     0
+      gpt-4o:default mmlupro  CB  100            298 100 0.39     0.320  0.070    0.059   1.00       1.00                     0
+      gpt-4o:default mmlupro  CB  500           1498 100 0.36     0.320  0.040    0.058   1.00       1.00                     0
+      gpt-4o:default mmlupro  CB 1000           2999 100 0.36     0.320  0.040    0.058   1.00       1.00                     0
+      gpt-4o:default mmlupro  CC   10             28 100 0.40     0.320  0.080    0.059   1.00       1.00                     0
+      gpt-4o:default mmlupro  CC  100            298 100 0.37     0.320  0.050    0.058   1.00       1.00                     0
+      gpt-4o:default mmlupro  RB    1            184 100 0.36     0.320  0.040    0.058   1.00       1.00                     0
+      gpt-4o:default mmlupro  RB    3            555 100 0.39     0.320  0.070    0.059   1.00       1.00                     0
+      gpt-4o:default mmlupro   C    1              0 100 0.40     0.320  0.080    0.059   1.00       0.66                     0
+      gpt-4o:default mmlupro   C    3              0 100 0.34     0.320  0.020    0.058   1.00       0.72                     0
+    gpt-5.6-sol:none mmlupro  XB   20             20 100 0.78     0.765  0.015    0.051   1.00       1.00                     0
+    gpt-5.6-sol:none mmlupro  XB  140            140 100 0.79     0.765  0.025    0.051   1.00       1.00                     0
+    gpt-5.6-sol:none mmlupro  XB  700            700 100 0.80     0.765  0.035    0.050   1.00       1.00                     0
+    gpt-5.6-sol:none mmlupro  XC   20             20 100 0.76     0.765 -0.005    0.052   1.00       1.00                     0
+    gpt-5.6-sol:none mmlupro  XC  140            140 100 0.80     0.765  0.035    0.050   1.00       1.00                     0
+    gpt-5.6-sol:none mmlupro  XC  700            700 100 0.79     0.765  0.025    0.051   1.00       1.00                     0
+    gpt-5.6-sol:none mmlupro  CB   10             28 100 0.78     0.765  0.015    0.051   1.00       1.00                     0
+    gpt-5.6-sol:none mmlupro  CB   50            148 100 0.77     0.765  0.005    0.052   1.00       1.00                     0
+    gpt-5.6-sol:none mmlupro  CB  100            298 100 0.80     0.765  0.035    0.050   1.00       1.00                     0
+    gpt-5.6-sol:none mmlupro  CB  500           1498 100 0.82     0.765  0.055    0.049   1.00       1.00                     0
+    gpt-5.6-sol:none mmlupro  CB 1000           2999 100 0.79     0.765  0.025    0.051   1.00       1.00                     0
+    gpt-5.6-sol:none mmlupro  CC   10             28 100 0.78     0.765  0.015    0.051   1.00       1.00                     0
+    gpt-5.6-sol:none mmlupro  CC  100            298 100 0.74     0.765 -0.025    0.053   1.00       1.00                     0
+    gpt-5.6-sol:none mmlupro  RB    1            184 100 0.84     0.765  0.075    0.047   1.00       1.00                     0
+    gpt-5.6-sol:none mmlupro  RB    3            555 100 0.84     0.765  0.075    0.047   1.00       1.00                     0
+    gpt-5.6-sol:none mmlupro   C    1              0 100 0.84     0.765  0.075    0.047   1.00       1.00                     0
+    gpt-5.6-sol:none mmlupro   C    3              0 100 0.79     0.765  0.025    0.051   1.00       1.00                     0
+claude-fable-5-1:low mmlupro  XB   20             20 100 0.88     0.870  0.010    0.040   1.00       1.00                     4
+claude-fable-5-1:low mmlupro  XB  140            140 100 0.88     0.870  0.010    0.040   1.00       1.00                     4
+claude-fable-5-1:low mmlupro  XB  700            700 100 0.89     0.870  0.020    0.039   0.99       0.99                     7
+claude-fable-5-1:low mmlupro  XC   20             20 100 0.88     0.870  0.010    0.040   1.00       1.00                     6
+claude-fable-5-1:low mmlupro  XC  140            140 100 0.85     0.870 -0.020    0.043   1.00       1.00                    18
+claude-fable-5-1:low mmlupro  XC  700            700 100 0.89     0.870  0.020    0.039   1.00       1.00                    74
+claude-fable-5-1:low mmlupro  CB   10             28 100 0.88     0.870  0.010    0.040   1.00       1.00                     4
+claude-fable-5-1:low mmlupro  CB   50            148 100 0.86     0.870 -0.010    0.042   0.97       0.97                     7
+claude-fable-5-1:low mmlupro  CB  100            298 100 0.90     0.870  0.030    0.038   0.98       0.97                     7
+claude-fable-5-1:low mmlupro  CB  500           1498 100 0.87     0.870  0.000    0.041   0.98       0.98                     7
+claude-fable-5-1:low mmlupro  CB 1000           2999 100 0.87     0.870  0.000    0.041   1.00       0.97                    11
+claude-fable-5-1:low mmlupro  CC   10             28 100 0.88     0.870  0.010    0.040   1.00       1.00                     4
+claude-fable-5-1:low mmlupro  CC  100            298 100 0.88     0.870  0.010    0.040   1.00       1.00                     4
+claude-fable-5-1:low mmlupro  RB    1            184 100 0.88     0.870  0.010    0.040   0.98       0.97                     7
+claude-fable-5-1:low mmlupro  RB    3            555 100 0.87     0.870  0.000    0.041   0.98       0.98                     7
+claude-fable-5-1:low mmlupro   C    1              0 100 0.72     0.870 -0.150    0.051   0.83       0.83                   297
+claude-fable-5-1:low mmlupro   C    3              0 100 0.52     0.870 -0.350    0.055   0.59       0.59                   864
+     gpt-6-astra:low mmlupro  XB   20             20 100 0.94     0.935  0.005    0.029   1.00       1.00                     0
+     gpt-6-astra:low mmlupro  XB  140            140 100 0.92     0.935 -0.015    0.032   1.00       1.00                     0
+     gpt-6-astra:low mmlupro  XB  700            700 100 0.94     0.935  0.005    0.029   1.00       1.00                     0
+     gpt-6-astra:low mmlupro  XC   20             20 100 0.94     0.935  0.005    0.029   1.00       1.00                     0
+     gpt-6-astra:low mmlupro  XC  140            140 100 0.92     0.935 -0.015    0.032   1.00       1.00                     0
+     gpt-6-astra:low mmlupro  XC  700            700 100 0.95     0.935  0.015    0.028   1.00       0.99                     0
+     gpt-6-astra:low mmlupro  CB   10             28 100 0.92     0.935 -0.015    0.032   1.00       1.00                     0
+     gpt-6-astra:low mmlupro  CB   50            148 100 0.92     0.935 -0.015    0.032   1.00       1.00                     0
+     gpt-6-astra:low mmlupro  CB  100            298 100 0.92     0.935 -0.015    0.032   1.00       1.00                     0
+     gpt-6-astra:low mmlupro  CB  500           1498 100 0.97     0.935  0.035    0.024   1.00       1.00                     0
+     gpt-6-astra:low mmlupro  CB 1000           2999 100 0.95     0.935  0.015    0.028   1.00       1.00                     0
+     gpt-6-astra:low mmlupro  CC   10             28 100 0.94     0.935  0.005    0.029   1.00       1.00                     0
+     gpt-6-astra:low mmlupro  CC  100            298 100 0.93     0.935 -0.005    0.031   1.00       1.00                     0
+     gpt-6-astra:low mmlupro  RB    1            184 100 0.93     0.935 -0.005    0.031   1.00       1.00                     0
+     gpt-6-astra:low mmlupro  RB    3            555 100 0.94     0.935  0.005    0.029   1.00       1.00                     0
+     gpt-6-astra:low mmlupro   C    1              0 100 0.92     0.935 -0.015    0.032   1.00       1.00                     0
+     gpt-6-astra:low mmlupro   C    3              0 100 0.94     0.935  0.005    0.029   1.00       1.00                     0
+
+baselines (no filler):
+                                acc    n
+task    model_eff                       
+gpqa    claude-fable-5-1:low  0.815  200
+        gpt-4o:default        0.415  200
+        gpt-5.6-sol:none      0.585  200
+        gpt-6-astra:low       0.855  200
+gsm8k   claude-fable-5-1:low  0.915  200
+        gpt-4o:default        0.515  200
+        gpt-5.6-sol:none      0.865  200
+        gpt-6-astra:low       0.940  200
+mmlupro claude-fable-5-1:low  0.870  200
+        gpt-4o:default        0.320  200
+        gpt-5.6-sol:none      0.765  200
+        gpt-6-astra:low       0.935  200
+fig -> /workspace/neuralese-filler/results/bench_dots/figs/bench_filler.png

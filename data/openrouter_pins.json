@@ -1,0 +1,150 @@
+{
+ "meta-llama/llama-3.3-70b-instruct": {
+  "only": [
+   "crusoe/bf16"
+  ],
+  "allow_fallbacks": false,
+  "data_collection": "deny",
+  "require_parameters": false
+ },
+ "meta-llama/llama-4-maverick": {
+  "only": [
+   "deepinfra/base"
+  ],
+  "allow_fallbacks": false,
+  "data_collection": "deny",
+  "require_parameters": false
+ },
+ "deepseek/deepseek-chat-v3-0324": {
+  "only": [
+   "crusoe/bf16"
+  ],
+  "allow_fallbacks": false,
+  "data_collection": "deny",
+  "require_parameters": false
+ },
+ "deepseek/deepseek-v3.2": {
+  "only": [
+   "siliconflow/fp8"
+  ],
+  "allow_fallbacks": false,
+  "data_collection": "deny",
+  "require_parameters": false
+ },
+ "moonshotai/kimi-k2-0905": {
+  "only": [
+   "novita/fp8"
+  ],
+  "allow_fallbacks": false,
+  "data_collection": "deny",
+  "require_parameters": false
+ },
+ "qwen/qwen3-235b-a22b-2507": {
+  "only": [
+   "gmicloud/fp8"
+  ],
+  "allow_fallbacks": false,
+  "data_collection": "deny",
+  "require_parameters": false
+ },
+ "qwen/qwen3.5-397b-a17b": {
+  "only": [
+   "deepinfra/fp8"
+  ],
+  "allow_fallbacks": false,
+  "data_collection": "deny",
+  "require_parameters": false
+ },
+ "qwen/qwen3.8-2.4t-a95b": {
+  "only": [
+   "siliconflow/fp8"
+  ],
+  "allow_fallbacks": false,
+  "data_collection": "deny",
+  "require_parameters": false
+ },
+ "z-ai/glm-5.3": {
+  "only": [
+   "gmicloud/fp8"
+  ],
+  "allow_fallbacks": false,
+  "data_collection": "deny",
+  "require_parameters": false
+ },
+ "mistralai/mistral-large-2512": {
+  "only": [
+   "mistral/zdr"
+  ],
+  "allow_fallbacks": false,
+  "data_collection": "deny",
+  "require_parameters": false
+ },
+ "openai/gpt-oss-120b": {
+  "only": [
+   "akashml/bf16"
+  ],
+  "allow_fallbacks": false,
+  "data_collection": "deny",
+  "require_parameters": false
+ },
+ "moonshotai/kimi-k2.6": {
+  "only": [
+   "crusoe/bf16"
+  ],
+  "allow_fallbacks": false,
+  "data_collection": "deny",
+  "require_parameters": false
+ },
+ "anthropic/claude-sonnet-4": {
+  "data_collection": "deny",
+  "allow_fallbacks": false
+ },
+ "anthropic/claude-opus-4.1": {
+  "data_collection": "deny",
+  "allow_fallbacks": false
+ },
+ "anthropic/claude-sonnet-4.5": {
+  "data_collection": "deny",
+  "allow_fallbacks": false
+ },
+ "anthropic/claude-opus-4.5": {
+  "data_collection": "deny",
+  "allow_fallbacks": false
+ },
+ "anthropic/claude-opus-4.6": {
+  "data_collection": "deny",
+  "allow_fallbacks": false
+ },
+ "anthropic/claude-opus-4.7": {
+  "data_collection": "deny",
+  "allow_fallbacks": false
+ },
+ "anthropic/claude-sonnet-5": {
+  "data_collection": "deny",
+  "allow_fallbacks": false
+ },
+ "anthropic/claude-opus-5": {
+  "data_collection": "deny",
+  "allow_fallbacks": false
+ },
+ "google/gemini-2.5-flash": {
+  "data_collection": "deny",
+  "allow_fallbacks": false
+ },
+ "google/gemini-3.5-flash": {
+  "data_collection": "deny",
+  "allow_fallbacks": false
+ },
+ "google/gemini-3.8-flash": {
+  "data_collection": "deny",
+  "allow_fallbacks": false
+ },
+ "x-ai/grok-4.20": {
+  "data_collection": "deny",
+  "allow_fallbacks": false
+ },
+ "x-ai/grok-4.6": {
+  "data_collection": "deny",
+  "allow_fallbacks": false
+ }
+}

@@ -1,0 +1,32 @@
+{
+ "tag": "tightcap",
+ "models": [
+  "gpt-5.6-sol:low"
+ ],
+ "depths": [
+  4,
+  6,
+  8,
+  12
+ ],
+ "n": 40,
+ "seed": 0,
+ "arms": [
+  "B",
+  "C"
+ ],
+ "ks": [
+  0,
+  1,
+  2,
+  4,
+  8
+ ],
+ "cap_mult": 1.0,
+ "cap_add": 8,
+ "no_cap": false,
+ "concurrency": 32,
+ "log_every": 200,
+ "dry_run": false,
+ "key_env": null
+}

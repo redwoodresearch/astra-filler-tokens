@@ -1,0 +1,30 @@
+{
+ "tag": "greenblatt2",
+ "models": [
+  "gpt-5.6-sol:none"
+ ],
+ "depths": [
+  1
+ ],
+ "n": 157,
+ "seed": 0,
+ "tasks": [
+  "aimepp"
+ ],
+ "shots": 0,
+ "arms": [
+  "XI"
+ ],
+ "ks": [
+  256,
+  1024
+ ],
+ "cap_mult": 1.3,
+ "cap_add": 32,
+ "no_cap": false,
+ "concurrency": 30,
+ "log_every": 500,
+ "dry_run": false,
+ "estimate": false,
+ "key_env": null
+}

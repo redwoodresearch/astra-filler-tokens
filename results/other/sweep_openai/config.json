@@ -1,0 +1,46 @@
+{
+ "tag": "sweep_openai",
+ "models": [
+  "gpt-4o",
+  "gpt-4.1",
+  "gpt-5:minimal",
+  "gpt-5.1:none",
+  "gpt-5.2:none",
+  "gpt-5.4:none",
+  "gpt-5.6-terra:none",
+  "gpt-5.6-luna:none"
+ ],
+ "depths": [
+  1,
+  2,
+  3,
+  4,
+  6,
+  8,
+  12,
+  16
+ ],
+ "n": 40,
+ "seed": 0,
+ "tasks": [
+  "perm",
+  "lookup",
+  "modchain",
+  "reach",
+  "stack",
+  "xor"
+ ],
+ "arms": [
+  "B"
+ ],
+ "ks": [
+  0
+ ],
+ "cap_mult": 1.3,
+ "cap_add": 32,
+ "no_cap": false,
+ "concurrency": 48,
+ "log_every": 1000,
+ "dry_run": false,
+ "key_env": null
+}

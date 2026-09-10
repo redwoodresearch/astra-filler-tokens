@@ -1,0 +1,194 @@
+                   model_eff   task    depths arm      k  filler_tokens   n  acc_k0   acc  paired_gain  gain_se  p_paired
+             gpt-6-astra:low   aime      None  CB   10.0             23 214   0.290 0.372        0.089    0.024     0.000
+             gpt-6-astra:low   aime      None  CB   30.0             63 214   0.290 0.459        0.178    0.029     0.000
+             gpt-6-astra:low   aime      None  CB  100.0            203 214   0.290 0.541        0.262    0.032     0.000
+             gpt-6-astra:low   aime      None  CB  300.0            603 214   0.290 0.642        0.355    0.033     0.000
+             gpt-6-astra:low   aime      None  CB 1000.0           2004 214   0.290 0.729        0.449    0.034     0.000
+             gpt-6-astra:low   aime      None  XB  300.0            300 213   0.290 0.585        0.300    0.031     0.000
+             gpt-6-astra:low   aime      None  RB    1.0            115 211   0.290 0.460        0.175    0.028     0.000
+             gpt-6-astra:low   aime      None  RB    5.0            577 213   0.290 0.618        0.333    0.033     0.000
+claude-opus-4-5-20251101:off   aime      None  CB   10.0             23 218   0.303 0.317        0.014    0.015     0.366
+claude-opus-4-5-20251101:off   aime      None  CB   30.0             63 218   0.303 0.307        0.005    0.017     0.782
+claude-opus-4-5-20251101:off   aime      None  CB  100.0            203 218   0.303 0.330        0.028    0.018     0.132
+claude-opus-4-5-20251101:off   aime      None  CB  300.0            603 218   0.303 0.303        0.000    0.017     1.000
+claude-opus-4-5-20251101:off   aime      None  CB 1000.0           2004 218   0.303 0.298       -0.005    0.019     0.809
+claude-opus-4-5-20251101:off   aime      None  XB  300.0            300 218   0.303 0.317        0.014    0.019     0.467
+claude-opus-4-5-20251101:off   aime      None  RB    1.0            115 218   0.303 0.303        0.000    0.016     1.000
+claude-opus-4-5-20251101:off   aime      None  RB    5.0            575 218   0.303 0.321        0.018    0.018     0.317
+           claude-opus-5:off   aime      None  CB   10.0             23 217   0.456 0.465        0.009    0.009     0.317
+           claude-opus-5:off   aime      None  CB   30.0             63 217   0.456 0.461        0.005    0.012     0.706
+           claude-opus-5:off   aime      None  CB  100.0            203 217   0.456 0.488        0.032    0.019     0.088
+           claude-opus-5:off   aime      None  CB  300.0            603 215   0.456 0.481        0.028    0.019     0.132
+           claude-opus-5:off   aime      None  CB 1000.0           2004 214   0.456 0.451        0.000    0.023     1.000
+           claude-opus-5:off   aime      None  XB  300.0            300 217   0.456 0.488        0.032    0.018     0.069
+           claude-opus-5:off   aime      None  RB    1.0            115 217   0.456 0.509        0.055    0.016     0.000
+           claude-opus-5:off   aime      None  RB    5.0            575 217   0.456 0.486        0.032    0.019     0.088
+            gpt-5.6-sol:none   aime      None  CB   10.0             23 218   0.087 0.078       -0.009    0.016     0.564
+            gpt-5.6-sol:none   aime      None  CB   30.0             63 218   0.087 0.124        0.037    0.017     0.031
+            gpt-5.6-sol:none   aime      None  CB  100.0            203 218   0.087 0.119        0.032    0.016     0.051
+            gpt-5.6-sol:none   aime      None  CB  300.0            603 218   0.087 0.124        0.037    0.019     0.058
+            gpt-5.6-sol:none   aime      None  CB 1000.0           2004 218   0.087 0.151        0.064    0.022     0.004
+            gpt-5.6-sol:none   aime      None  XB  300.0            300 218   0.087 0.147        0.060    0.020     0.002
+            gpt-5.6-sol:none   aime      None  RB    1.0            115 218   0.087 0.142        0.055    0.019     0.004
+            gpt-5.6-sol:none   aime      None  RB    5.0            575 218   0.087 0.119        0.032    0.019     0.088
+             gpt-6-astra:low aimepp      AIME  CB   10.0             23  34   0.647 0.765        0.118    0.070     0.094
+             gpt-6-astra:low aimepp      AIME  CB   30.0             63  34   0.647 0.853        0.206    0.070     0.003
+             gpt-6-astra:low aimepp      AIME  CB  100.0            203  34   0.647 0.794        0.147    0.062     0.017
+             gpt-6-astra:low aimepp      AIME  CB  300.0            603  34   0.647 0.882        0.235    0.074     0.001
+             gpt-6-astra:low aimepp      AIME  CB 1000.0           2004  34   0.647 0.882        0.235    0.074     0.001
+             gpt-6-astra:low aimepp      AIME  XB  300.0            300  33   0.647 0.848        0.182    0.081     0.025
+             gpt-6-astra:low aimepp      AIME  RB    1.0             46  34   0.647 0.794        0.147    0.075     0.049
+             gpt-6-astra:low aimepp      AIME  RB    5.0            231  34   0.647 0.912        0.265    0.077     0.001
+claude-opus-4-5-20251101:off aimepp      AIME  CB   10.0             23  34   0.206 0.206        0.000    0.042     1.000
+claude-opus-4-5-20251101:off aimepp      AIME  CB   30.0             63  34   0.206 0.235        0.029    0.051     0.568
+claude-opus-4-5-20251101:off aimepp      AIME  CB  100.0            203  34   0.206 0.235        0.029    0.051     0.568
+claude-opus-4-5-20251101:off aimepp      AIME  CB  300.0            603  34   0.206 0.265        0.059    0.059     0.317
+claude-opus-4-5-20251101:off aimepp      AIME  CB 1000.0           2004  34   0.206 0.294        0.088    0.049     0.074
+claude-opus-4-5-20251101:off aimepp      AIME  XB  300.0            300  34   0.206 0.235        0.029    0.029     0.317
+claude-opus-4-5-20251101:off aimepp      AIME  RB    1.0             46  34   0.206 0.235        0.029    0.029     0.317
+claude-opus-4-5-20251101:off aimepp      AIME  RB    5.0            231  34   0.206 0.294        0.088    0.049     0.074
+           claude-opus-5:off aimepp      AIME  CB   10.0             23  34   0.324 0.265       -0.059    0.041     0.151
+           claude-opus-5:off aimepp      AIME  CB   30.0             63  34   0.324 0.324        0.000    0.060     1.000
+           claude-opus-5:off aimepp      AIME  CB  100.0            203  34   0.324 0.324        0.000    0.060     1.000
+           claude-opus-5:off aimepp      AIME  CB  300.0            603  34   0.324 0.206       -0.118    0.056     0.036
+           claude-opus-5:off aimepp      AIME  CB 1000.0           2004  33   0.324 0.242       -0.091    0.051     0.074
+           claude-opus-5:off aimepp      AIME  XB  300.0            300  34   0.324 0.294       -0.029    0.051     0.568
+           claude-opus-5:off aimepp      AIME  RB    1.0             46  34   0.324 0.265       -0.059    0.059     0.317
+           claude-opus-5:off aimepp      AIME  RB    5.0            231  34   0.324 0.324        0.000    0.060     1.000
+            gpt-5.6-sol:none aimepp      AIME  CB   10.0             23  34   0.265 0.235       -0.029    0.067     0.659
+            gpt-5.6-sol:none aimepp      AIME  CB   30.0             63  34   0.265 0.206       -0.059    0.059     0.317
+            gpt-5.6-sol:none aimepp      AIME  CB  100.0            203  34   0.265 0.324        0.059    0.084     0.483
+            gpt-5.6-sol:none aimepp      AIME  CB  300.0            603  34   0.265 0.294        0.029    0.067     0.659
+            gpt-5.6-sol:none aimepp      AIME  CB 1000.0           2004  34   0.265 0.382        0.118    0.056     0.036
+            gpt-5.6-sol:none aimepp      AIME  XB  300.0            300  34   0.265 0.353        0.088    0.077     0.255
+            gpt-5.6-sol:none aimepp      AIME  RB    1.0             46  34   0.265 0.235       -0.029    0.067     0.659
+            gpt-5.6-sol:none aimepp      AIME  RB    5.0            231  34   0.265 0.294        0.029    0.067     0.659
+             gpt-6-astra:low aimepp      None  CB   10.0             23 152   0.157 0.179        0.026    0.021     0.205
+             gpt-6-astra:low aimepp      None  CB   30.0             63 153   0.157 0.185        0.033    0.019     0.094
+             gpt-6-astra:low aimepp      None  CB  100.0            203 152   0.157 0.173        0.020    0.017     0.256
+             gpt-6-astra:low aimepp      None  CB  300.0            603 153   0.157 0.217        0.065    0.022     0.003
+             gpt-6-astra:low aimepp      None  CB 1000.0           2004 153   0.157 0.210        0.059    0.023     0.011
+             gpt-6-astra:low aimepp      None  XB  300.0            300 152   0.157 0.205        0.053    0.020     0.010
+             gpt-6-astra:low aimepp      None  RB    1.0            188 151   0.157 0.195        0.040    0.021     0.056
+             gpt-6-astra:low aimepp      None  RB    5.0            941 153   0.157 0.217        0.065    0.022     0.003
+claude-opus-4-5-20251101:off aimepp      None  CB   10.0             23 157   0.045 0.045        0.000    0.009     1.000
+claude-opus-4-5-20251101:off aimepp      None  CB   30.0             63 157   0.045 0.051        0.006    0.011     0.565
+claude-opus-4-5-20251101:off aimepp      None  CB  100.0            203 157   0.045 0.051        0.006    0.011     0.565
+claude-opus-4-5-20251101:off aimepp      None  CB  300.0            603 157   0.045 0.057        0.013    0.013     0.317
+claude-opus-4-5-20251101:off aimepp      None  CB 1000.0           2004 157   0.045 0.064        0.019    0.011     0.081
+claude-opus-4-5-20251101:off aimepp      None  XB  300.0            300 157   0.045 0.051        0.006    0.006     0.317
+claude-opus-4-5-20251101:off aimepp      None  RB    1.0            188 157   0.045 0.051        0.006    0.006     0.317
+claude-opus-4-5-20251101:off aimepp      None  RB    5.0            941 157   0.045 0.064        0.019    0.011     0.081
+           claude-opus-5:off aimepp      None  CB   10.0             23 157   0.070 0.064       -0.006    0.011     0.565
+           claude-opus-5:off aimepp      None  CB   30.0             63 157   0.070 0.070        0.000    0.013     1.000
+           claude-opus-5:off aimepp      None  CB  100.0            203 157   0.070 0.076        0.006    0.014     0.656
+           claude-opus-5:off aimepp      None  CB  300.0            603 157   0.070 0.051       -0.019    0.014     0.179
+           claude-opus-5:off aimepp      None  CB 1000.0           2004 155   0.070 0.052       -0.019    0.011     0.081
+           claude-opus-5:off aimepp      None  XB  300.0            300 156   0.070 0.064       -0.006    0.011     0.565
+           claude-opus-5:off aimepp      None  RB    1.0            188 157   0.070 0.064       -0.006    0.014     0.656
+           claude-opus-5:off aimepp      None  RB    5.0            940 156   0.070 0.090        0.019    0.017     0.256
+            gpt-5.6-sol:none aimepp      None  CB   10.0             23 157   0.057 0.051       -0.006    0.014     0.656
+            gpt-5.6-sol:none aimepp      None  CB   30.0             63 157   0.057 0.051       -0.006    0.014     0.656
+            gpt-5.6-sol:none aimepp      None  CB  100.0            203 157   0.057 0.083        0.025    0.020     0.205
+            gpt-5.6-sol:none aimepp      None  CB  300.0            603 157   0.057 0.070        0.013    0.016     0.415
+            gpt-5.6-sol:none aimepp      None  CB 1000.0           2004 157   0.057 0.096        0.038    0.015     0.013
+            gpt-5.6-sol:none aimepp      None  XB  300.0            300 157   0.057 0.089        0.032    0.019     0.094
+            gpt-5.6-sol:none aimepp      None  RB    1.0            188 157   0.057 0.070        0.013    0.018     0.480
+            gpt-5.6-sol:none aimepp      None  RB    5.0            941 157   0.057 0.070        0.013    0.016     0.415
+             gpt-6-astra:low  arith (5, 6, 7)  CB   10.0             23 300   0.877 0.977        0.100    0.018     0.000
+             gpt-6-astra:low  arith (5, 6, 7)  CB   30.0             63 300   0.877 0.997        0.120    0.019     0.000
+             gpt-6-astra:low  arith (5, 6, 7)  CB  100.0            203 300   0.877 0.997        0.120    0.019     0.000
+             gpt-6-astra:low  arith (5, 6, 7)  CB  300.0            603 300   0.877 1.000        0.123    0.019     0.000
+             gpt-6-astra:low  arith (5, 6, 7)  CB 1000.0           2004 300   0.877 0.997        0.120    0.019     0.000
+             gpt-6-astra:low  arith (5, 6, 7)  XB  300.0            300 300   0.877 1.000        0.123    0.019     0.000
+             gpt-6-astra:low  arith (5, 6, 7)  RB    1.0             29 300   0.877 0.987        0.110    0.018     0.000
+             gpt-6-astra:low  arith (5, 6, 7)  RB    5.0            145 300   0.877 0.997        0.120    0.019     0.000
+claude-opus-4-5-20251101:off  arith (5, 6, 7)  CB   10.0             23 300   0.353 0.387        0.033    0.020     0.104
+claude-opus-4-5-20251101:off  arith (5, 6, 7)  CB   30.0             63 300   0.353 0.427        0.073    0.022     0.001
+claude-opus-4-5-20251101:off  arith (5, 6, 7)  CB  100.0            203 300   0.353 0.517        0.163    0.025     0.000
+claude-opus-4-5-20251101:off  arith (5, 6, 7)  CB  300.0            603 300   0.353 0.520        0.167    0.026     0.000
+claude-opus-4-5-20251101:off  arith (5, 6, 7)  CB 1000.0           2004 300   0.353 0.527        0.173    0.026     0.000
+claude-opus-4-5-20251101:off  arith (5, 6, 7)  XB  300.0            300 300   0.353 0.507        0.153    0.025     0.000
+claude-opus-4-5-20251101:off  arith (5, 6, 7)  RB    1.0             29 300   0.353 0.423        0.070    0.024     0.003
+claude-opus-4-5-20251101:off  arith (5, 6, 7)  RB    5.0            145 300   0.353 0.543        0.190    0.026     0.000
+           claude-opus-5:off  arith (5, 6, 7)  CB   10.0             23 300   0.613 0.683        0.070    0.022     0.001
+           claude-opus-5:off  arith (5, 6, 7)  CB   30.0             63 140   0.613 0.729        0.121    0.031     0.000
+           claude-opus-5:off  arith (5, 6, 7)  CB  100.0            203 299   0.613 0.689        0.074    0.024     0.002
+           claude-opus-5:off  arith (5, 6, 7)  CB  300.0            603 300   0.613 0.643        0.030    0.026     0.241
+           claude-opus-5:off  arith (5, 6, 7)  CB 1000.0           2004 126   0.613 0.587        0.016    0.036     0.656
+           claude-opus-5:off  arith (5, 6, 7)  XB  300.0            300 300   0.613 0.713        0.100    0.023     0.000
+           claude-opus-5:off  arith (5, 6, 7)  RB    1.0             29 300   0.613 0.743        0.130    0.025     0.000
+           claude-opus-5:off  arith (5, 6, 7)  RB    5.0            145 300   0.613 0.747        0.133    0.026     0.000
+            gpt-5.6-sol:none  arith (5, 6, 7)  CB   10.0             23 300   0.510 0.507       -0.003    0.022     0.879
+            gpt-5.6-sol:none  arith (5, 6, 7)  CB   30.0             63 300   0.510 0.570        0.060    0.024     0.014
+            gpt-5.6-sol:none  arith (5, 6, 7)  CB  100.0            203 300   0.510 0.717        0.207    0.027     0.000
+            gpt-5.6-sol:none  arith (5, 6, 7)  CB  300.0            603 300   0.510 0.717        0.207    0.028     0.000
+            gpt-5.6-sol:none  arith (5, 6, 7)  CB 1000.0           2004 300   0.510 0.700        0.190    0.026     0.000
+            gpt-5.6-sol:none  arith (5, 6, 7)  XB  300.0            300 300   0.510 0.727        0.217    0.026     0.000
+            gpt-5.6-sol:none  arith (5, 6, 7)  RB    1.0             29 300   0.510 0.673        0.163    0.025     0.000
+            gpt-5.6-sol:none  arith (5, 6, 7)  RB    5.0            145 300   0.510 0.743        0.233    0.026     0.000
+             gpt-6-astra:low  arith     (10,)  CB   10.0             23 100   0.700 0.900        0.200    0.043     0.000
+             gpt-6-astra:low  arith     (10,)  CB   30.0             63 100   0.700 0.960        0.260    0.044     0.000
+             gpt-6-astra:low  arith     (10,)  CB  100.0            203 100   0.700 0.980        0.280    0.045     0.000
+             gpt-6-astra:low  arith     (10,)  CB  300.0            603 100   0.700 0.980        0.280    0.045     0.000
+             gpt-6-astra:low  arith     (10,)  CB 1000.0           2004 100   0.700 1.000        0.300    0.046     0.000
+             gpt-6-astra:low  arith     (10,)  XB  300.0            300 100   0.700 1.000        0.300    0.046     0.000
+             gpt-6-astra:low  arith     (10,)  RB    1.0             44 100   0.700 0.960        0.260    0.044     0.000
+             gpt-6-astra:low  arith     (10,)  RB    5.0            219 100   0.700 0.980        0.280    0.045     0.000
+claude-opus-4-5-20251101:off  arith     (10,)  CB   10.0             23 100   0.110 0.110        0.000    0.025     1.000
+claude-opus-4-5-20251101:off  arith     (10,)  CB   30.0             63 100   0.110 0.140        0.030    0.030     0.317
+claude-opus-4-5-20251101:off  arith     (10,)  CB  100.0            203 100   0.110 0.140        0.030    0.033     0.366
+claude-opus-4-5-20251101:off  arith     (10,)  CB  300.0            603 100   0.110 0.150        0.040    0.035     0.247
+claude-opus-4-5-20251101:off  arith     (10,)  CB 1000.0           2004 100   0.110 0.150        0.040    0.032     0.205
+claude-opus-4-5-20251101:off  arith     (10,)  XB  300.0            300 100   0.110 0.150        0.040    0.032     0.205
+claude-opus-4-5-20251101:off  arith     (10,)  RB    1.0             44 100   0.110 0.140        0.030    0.026     0.256
+claude-opus-4-5-20251101:off  arith     (10,)  RB    5.0            219 100   0.110 0.160        0.050    0.036     0.164
+           claude-opus-5:off  arith     (10,)  CB   10.0             23  99   0.222 0.250        0.030    0.036     0.406
+           claude-opus-5:off  arith     (10,)  CB   30.0             63  37   0.222 0.270        0.027    0.047     0.567
+           claude-opus-5:off  arith     (10,)  CB  100.0            203  99   0.222 0.250        0.030    0.030     0.317
+           claude-opus-5:off  arith     (10,)  CB  300.0            603  99   0.222 0.260        0.040    0.043     0.346
+           claude-opus-5:off  arith     (10,)  CB 1000.0           2004  38   0.222 0.211        0.026    0.059     0.658
+           claude-opus-5:off  arith     (10,)  XB  300.0            300  99   0.222 0.280        0.061    0.035     0.080
+           claude-opus-5:off  arith     (10,)  RB    1.0             44  99   0.222 0.260        0.040    0.038     0.285
+           claude-opus-5:off  arith     (10,)  RB    5.0            219  99   0.222 0.280        0.061    0.040     0.131
+            gpt-5.6-sol:none  arith     (10,)  CB   10.0             23 100   0.190 0.170       -0.020    0.035     0.565
+            gpt-5.6-sol:none  arith     (10,)  CB   30.0             63 100   0.190 0.210        0.020    0.040     0.618
+            gpt-5.6-sol:none  arith     (10,)  CB  100.0            203 100   0.190 0.330        0.140    0.053     0.009
+            gpt-5.6-sol:none  arith     (10,)  CB  300.0            603 100   0.190 0.350        0.160    0.055     0.003
+            gpt-5.6-sol:none  arith     (10,)  CB 1000.0           2004 100   0.190 0.330        0.140    0.051     0.006
+            gpt-5.6-sol:none  arith     (10,)  XB  300.0            300 100   0.190 0.290        0.100    0.048     0.038
+            gpt-5.6-sol:none  arith     (10,)  RB    1.0             44 100   0.190 0.240        0.050    0.046     0.275
+            gpt-5.6-sol:none  arith     (10,)  RB    5.0            219 100   0.190 0.450        0.260    0.058     0.000
+             gpt-6-astra:low  arith     (15,)  CB   10.0             23 100   0.500 0.710        0.210    0.050     0.000
+             gpt-6-astra:low  arith     (15,)  CB   30.0             63 100   0.500 0.890        0.390    0.051     0.000
+             gpt-6-astra:low  arith     (15,)  CB  100.0            203 100   0.500 0.920        0.420    0.050     0.000
+             gpt-6-astra:low  arith     (15,)  CB  300.0            603 100   0.500 0.910        0.410    0.049     0.000
+             gpt-6-astra:low  arith     (15,)  CB 1000.0           2004 100   0.500 0.920        0.420    0.050     0.000
+             gpt-6-astra:low  arith     (15,)  XB  300.0            300 100   0.500 0.930        0.430    0.050     0.000
+             gpt-6-astra:low  arith     (15,)  RB    1.0             62 100   0.500 0.850        0.350    0.048     0.000
+             gpt-6-astra:low  arith     (15,)  RB    5.0            310 100   0.500 0.920        0.420    0.050     0.000
+claude-opus-4-5-20251101:off  arith     (15,)  CB   10.0             23 100   0.050 0.100        0.050    0.022     0.022
+claude-opus-4-5-20251101:off  arith     (15,)  CB   30.0             63 100   0.050 0.090        0.040    0.024     0.100
+claude-opus-4-5-20251101:off  arith     (15,)  CB  100.0            203 100   0.050 0.100        0.050    0.026     0.056
+claude-opus-4-5-20251101:off  arith     (15,)  CB  300.0            603 100   0.050 0.120        0.070    0.029     0.017
+claude-opus-4-5-20251101:off  arith     (15,)  CB 1000.0           2004 100   0.050 0.120        0.070    0.026     0.006
+claude-opus-4-5-20251101:off  arith     (15,)  XB  300.0            300 100   0.050 0.130        0.080    0.027     0.003
+claude-opus-4-5-20251101:off  arith     (15,)  RB    1.0             62 100   0.050 0.100        0.050    0.022     0.022
+claude-opus-4-5-20251101:off  arith     (15,)  RB    5.0            310 100   0.050 0.120        0.070    0.026     0.006
+           claude-opus-5:off  arith     (15,)  CB   10.0             23 100   0.170 0.200        0.030    0.033     0.366
+           claude-opus-5:off  arith     (15,)  CB   30.0             63  39   0.170 0.231        0.026    0.058     0.658
+           claude-opus-5:off  arith     (15,)  CB  100.0            203 100   0.170 0.220        0.050    0.036     0.164
+           claude-opus-5:off  arith     (15,)  CB  300.0            603 100   0.170 0.180        0.010    0.036     0.782
+           claude-opus-5:off  arith     (15,)  CB 1000.0           2004  31   0.170 0.258        0.032    0.056     0.568
+           claude-opus-5:off  arith     (15,)  XB  300.0            300 100   0.170 0.160       -0.010    0.039     0.797
+           claude-opus-5:off  arith     (15,)  RB    1.0             62 100   0.170 0.180        0.010    0.033     0.764
+           claude-opus-5:off  arith     (15,)  RB    5.0            310 100   0.170 0.240        0.070    0.041     0.087
+            gpt-5.6-sol:none  arith     (15,)  CB   10.0             23 100   0.080 0.140        0.060    0.031     0.055
+            gpt-5.6-sol:none  arith     (15,)  CB   30.0             63 100   0.080 0.130        0.050    0.033     0.129
+            gpt-5.6-sol:none  arith     (15,)  CB  100.0            203 100   0.080 0.180        0.100    0.033     0.003
+            gpt-5.6-sol:none  arith     (15,)  CB  300.0            603 100   0.080 0.170        0.090    0.035     0.010
+            gpt-5.6-sol:none  arith     (15,)  CB 1000.0           2004 100   0.080 0.180        0.100    0.033     0.003
+            gpt-5.6-sol:none  arith     (15,)  XB  300.0            300 100   0.080 0.210        0.130    0.037     0.000
+            gpt-5.6-sol:none  arith     (15,)  RB    1.0             62 100   0.080 0.130        0.050    0.033     0.129
+            gpt-5.6-sol:none  arith     (15,)  RB    5.0            310 100   0.080 0.230        0.150    0.039     0.000
+fig -> /workspace/neuralese-filler/results/greenblatt/figs/greenblatt_replication.png

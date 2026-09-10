@@ -1,0 +1,35 @@
+{
+ "tag": "arith_shape",
+ "models": [
+  "gpt-6-astra:low"
+ ],
+ "depths": [
+  7,
+  10,
+  15
+ ],
+ "n": 100,
+ "seed": 0,
+ "tasks": [
+  "arithchain",
+  "arithbal"
+ ],
+ "shots": 0,
+ "arms": [
+  "B",
+  "CB"
+ ],
+ "ks": [
+  0,
+  300,
+  1000
+ ],
+ "cap_mult": 1.3,
+ "cap_add": 32,
+ "no_cap": false,
+ "concurrency": 40,
+ "log_every": 500,
+ "dry_run": false,
+ "estimate": false,
+ "key_env": null
+}

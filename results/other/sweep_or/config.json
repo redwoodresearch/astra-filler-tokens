@@ -1,0 +1,45 @@
+{
+ "tag": "sweep_or",
+ "models": [
+  "or/anthropic/claude-opus-5@off",
+  "or/google/gemini-2.5-flash@off",
+  "or/google/gemini-3.5-flash@low",
+  "or/google/gemini-3.8-flash@low",
+  "or/x-ai/grok-4.20@off",
+  "or/deepseek/deepseek-v3.2@off",
+  "or/qwen/qwen3.5-397b-a17b@off"
+ ],
+ "depths": [
+  1,
+  2,
+  3,
+  4,
+  6,
+  8,
+  12,
+  16
+ ],
+ "n": 40,
+ "seed": 0,
+ "tasks": [
+  "perm",
+  "lookup",
+  "modchain",
+  "reach",
+  "stack",
+  "xor"
+ ],
+ "arms": [
+  "B"
+ ],
+ "ks": [
+  0
+ ],
+ "cap_mult": 1.3,
+ "cap_add": 32,
+ "no_cap": false,
+ "concurrency": 32,
+ "log_every": 1000,
+ "dry_run": false,
+ "key_env": null
+}
