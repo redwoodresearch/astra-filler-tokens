@@ -176,7 +176,7 @@ def fewshot10():
             "aimepp_models",
             df[df.task == "aimepp"][lambda d: d.problem_id.map(aimepp_tier) == "AIME"],
             "AIME-Plus-Plus, AIME tier",
-            "lower left",
+            "upper left",
         ),
         ("aime_models", df[df.task == "aime"], "AIME/HMMT 2024-26", "upper left"),
     ]:
