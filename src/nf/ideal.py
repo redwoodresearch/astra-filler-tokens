@@ -6,14 +6,14 @@ and the no-filler baseline (plotted at x=1).
   3. nhop_models_hops.png five models at ~2,000 filler tokens (counting 1..1000) and none: accuracy vs hops.
   4. arith15_models.png   Gen-Arithmetic 15 ops, five models: accuracy vs filler tokens.
   5. aimepp_models.png    AIME-Plus-Plus AIME tier, five models.   6. aime_models.png  public AIME/HMMT, five models.
-Usage: uv run -m nf.ideal"""
+Usage: uv run -m nf.ideal            (uv run -m nf.ideal fewshot10 -> the four cross-model panels with 10-shot prompts)"""
 
 import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-from .analyze import ROOT, aimepp_tier, load, tag_dir
+from .analyze import ROOT, aimepp_tier, load
 
 matplotlib.use("Agg")
 plt.rcParams.update({"axes.spines.top": False, "axes.spines.right": False, "font.size": 10})
@@ -24,7 +24,7 @@ MODELS = {
     "claude-opus-4-5-20251101:off": ("claude-opus-4.5", "#9467BD"),
     "deepseek/deepseek-v3.2:off": ("deepseek-v3.2", "#8C564B"),
 }
-OUT = tag_dir("ideal")
+OUT = ROOT / "results" / "ideal"
 
 
 def _valid(df):
@@ -81,7 +81,7 @@ def _style(ax, title):
 def main(nhop_task: str = "nhop"):
     """nhop_task: "nhop" (original parenthesised phrasing) or "nhopnl" (rewritten nested English)."""
     global OUT
-    OUT = ROOT / "results" / "main" / ("ideal" if nhop_task == "nhop" else "ideal_nl")
+    OUT = ROOT / "results" / ("ideal" if nhop_task == "nhop" else "ideal_nl")
     OUT.mkdir(parents=True, exist_ok=True)
     nh = _valid(load("nhop"))
     nh = nh[nh.task == nhop_task]  # both phrasings share the tag
@@ -156,7 +156,37 @@ def main(nhop_task: str = "nhop"):
     print("wrote", sorted(p.name for p in OUT.glob("*.png")))
 
 
+def fewshot10():
+    """The four cross-model panels (2, 4, 5, 6) with ten same-dose gold demonstrations: Astra from `fewshot10_astra`
+    (doses to 4,096), Sol / Opus 4.5 / DeepSeek from `fewshot10_others` (doses to 1,024); Opus 5 not run (it refuses
+    few-shot dot prompts). Writes results/ideal_fewshot10/."""
+    out = ROOT / "results" / "other" / "ideal_fewshot10"
+    out.mkdir(parents=True, exist_ok=True)
+    df = _valid(pd.concat([load("fewshot10_astra"), load("fewshot10_others")]).reset_index(drop=True))
+    for name, d0, title, loc in [
+        ("nhop_models_4hop", df[(df.task == "nhop") & (df.depth == 4)], "N-hop natural facts, 4 hops", "upper left"),
+        ("arith15_models", df[(df.task == "arith") & (df.depth == 15)], "Gen-Arithmetic, 15 ops", "upper left"),
+        (
+            "aimepp_models",
+            df[df.task == "aimepp"][lambda d: d.problem_id.map(aimepp_tier) == "AIME"],
+            "AIME-Plus-Plus, AIME tier",
+            "lower left",
+        ),
+        ("aime_models", df[df.task == "aime"], "AIME/HMMT 2024-26", "upper left"),
+    ]:
+        fig, ax = plt.subplots(figsize=(7.5, 4.5), constrained_layout=True)
+        for me, (lab, col) in MODELS.items():
+            _curve(ax, d0[d0.model_eff == me], lab, col, zorder=10 if "astra" in me else 2)
+        _style(ax, f"{title}: accuracy vs filler tokens, 10-shot")
+        ax.legend(frameon=False, fontsize=9, loc=loc)
+        fig.savefig(out / f"{name}.png", dpi=150)
+    print("wrote", sorted(p.name for p in out.glob("*.png")))
+
+
 if __name__ == "__main__":
     import sys
 
-    main(sys.argv[1] if len(sys.argv) > 1 else "nhop")
+    if "fewshot10" in sys.argv:
+        fewshot10()
+    else:
+        main(sys.argv[1] if len(sys.argv) > 1 else "nhop")
