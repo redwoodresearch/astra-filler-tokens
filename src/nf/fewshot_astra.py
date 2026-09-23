@@ -61,8 +61,8 @@ def main():
     for ax, (key, (task, depth, ztag, title)) in zip(axes.flat, PANELS.items()):
         for label, d, col, mk in (
             ("0-shot (paper)", _select(zero[ztag], task, depth), "tab:gray", "o"),
-            ("3-shot, same-dose gold demos", _select(few, task, depth), "tab:red", "s"),
-            ("10-shot, same-dose gold demos", _select(few10, task, depth), "tab:blue", "^"),
+            ("3-shot", _select(few, task, depth), "tab:red", "s"),
+            ("10-shot", _select(few10, task, depth), "tab:blue", "^"),
         ):
             g = _curve(d)
             ax.errorbar(
@@ -90,7 +90,7 @@ def main():
         ax.set_xscale("symlog", linthresh=4)
         ax.set(xlim=(-0.5, MAX_K * 1.6), ylim=(-0.02, 1.02), title=title, xlabel="filler tokens", ylabel="accuracy")
         ax.legend(frameon=False, fontsize=8, loc="lower right")
-    fig.suptitle("gpt-6-astra, no-CoT: zero-shot vs 3- and 10-shot (same-dose gold demonstrations)", fontsize=12)
+    fig.suptitle("gpt-6-astra, no-CoT: zero-shot vs 3- and 10-shot", fontsize=12)
     out = tag_dir("fewshot_astra") / "figs"
     out.mkdir(parents=True, exist_ok=True)
     fig.savefig(out / "fewshot_astra.png", dpi=160)
