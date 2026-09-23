@@ -154,6 +154,9 @@ async def call_anthropic(client, model, effort, prompt, cap, retries=6):
         ]
         + [{"role": "user", "content": prompt.user}],
     }
+    if prompt.shots:  # the demos are an identical prefix for every query at a given (task, arm, k): cache them
+        last = body["messages"][2 * len(prompt.shots) - 1]
+        last["content"] = [{"type": "text", "text": last["content"], "cache_control": {"type": "ephemeral"}}]
     if effort == "off":
         body["thinking"] = {"type": "disabled"}
     elif effort:
@@ -197,7 +200,7 @@ def with_shots(prompt, p, arm, k, n):
         elif p.task == "aime":  # demonstrations from AIME-Plus-Plus
             q = make_problem(1, j, task="aimepp")
         elif p.task == "nhop":  # last 3 problems of the same hop count; evaluate with --n 147 so they are held out
-            q = make_problem(p.depth, 147 + j, task="nhop")
+            q = make_problem(p.depth, 150 - n + j, task="nhop")  # last n problems of the hop file; run with --n 150-n
         else:
             q = make_problem(p.depth, 5000 + j, seed=1, task=p.task)
         sp = build(q, arm, k)
@@ -350,7 +353,10 @@ async def main(a):
     per_model = {}
     for _prov, model, effort, _path, p, arm, k in jobs:
         pr = build(p, arm, k)
-        i, o = n_tokens(pr.developer) + n_tokens(pr.user) + 20, n_tokens(pr.expected_prefix + "\nANSWER: 1") + 3
+        if a.shots:
+            pr = with_shots(pr, p, arm, k, a.shots)
+        i = n_tokens(pr.developer) + n_tokens(pr.user) + 20 + sum(n_tokens(su) + n_tokens(sa) + 8 for su, sa in pr.shots)
+        o = n_tokens(pr.expected_prefix + "\nANSWER: 1") + 3
         est_in += i
         est_out += o
         m = per_model.setdefault(f"{model}:{effort}", [0, 0, 0])

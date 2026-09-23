@@ -98,5 +98,69 @@ def main():
     print(pd.DataFrame(rows).pivot_table(index=["panel", "shots"], columns="k", values="acc").round(2).to_string())
 
 
+OTHERS = {"gpt-5.6-sol": "Sol", "claude-opus-4-5-20251101": "Opus 4.5", "deepseek/deepseek-v3.2": "DeepSeek V3.2"}
+
+
+def _valid_model(df, model, max_k):
+    df = df[(df.model == model) & (df.status == "completed")]
+    df = df[(df.provider == "anthropic") | (df.reasoning_tokens.fillna(0) == 0)]
+    return df[((df.arm == "B") & (df.k == 0)) | ((df.arm == "XB") & (df.k <= max_k))]
+
+
+def others():
+    """Sol / Opus 4.5 / DeepSeek V3.2: zero-shot (paper runs, dots ≤ 1,024) vs 10-shot (`fewshot10_others`)."""
+    few = load("fewshot10_others")
+    zero = {t: load(t) for t in {p[2] for p in PANELS.values()}}
+    fig, axes = plt.subplots(3, 4, figsize=(15, 9.5), constrained_layout=True)
+    rows = []
+    for i, (model, mlab) in enumerate(OTHERS.items()):
+        for j, (key, (task, depth, ztag, title)) in enumerate(PANELS.items()):
+            ax = axes[i, j]
+            for label, d, col, mk in (
+                ("0-shot (paper)", _select(_valid_model(zero[ztag], model, 1024), task, depth), "tab:gray", "o"),
+                ("10-shot", _select(_valid_model(few, model, 1024), task, depth), "tab:blue", "^"),
+            ):
+                g = _curve(d)
+                ax.errorbar(
+                    g.k,
+                    g.acc,
+                    yerr=1.96 * np.sqrt(g.acc * (1 - g.acc) / g.n),
+                    fmt=mk,
+                    ls="-",
+                    color=col,
+                    lw=1.6,
+                    capsize=2,
+                    ms=5,
+                    label=label,
+                )
+                for _, r in g.iterrows():
+                    rows.append(
+                        {
+                            "model": mlab,
+                            "panel": key,
+                            "shots": int(label.split("-")[0]),
+                            "k": int(r.k),
+                            "acc": round(r.acc, 4),
+                            "n": int(r.n),
+                        }
+                    )
+            ax.set_xscale("symlog", linthresh=4)
+            ax.set(
+                xlim=(-0.5, 1024 * 1.6),
+                ylim=(-0.02, 1.02),
+                title=f"{mlab}: {title}",
+                xlabel="filler tokens",
+                ylabel="accuracy",
+            )
+            ax.legend(frameon=False, fontsize=8, loc="upper left")
+    fig.suptitle("Other models, no-CoT: zero-shot vs 10-shot", fontsize=12)
+    out = tag_dir("fewshot10_others") / "figs"
+    out.mkdir(parents=True, exist_ok=True)
+    fig.savefig(out / "fewshot10_others.png", dpi=160)
+    pd.DataFrame(rows).to_csv(out / "fewshot10_others.csv", index=False)
+
+
 if __name__ == "__main__":
-    main()
+    import sys
+
+    others() if "others" in sys.argv else main()

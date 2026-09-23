@@ -1,0 +1,120 @@
+model,panel,shots,k,acc,n
+Sol,arith15,0,0,0.08,100
+Sol,arith15,0,4,0.08,100
+Sol,arith15,0,16,0.13,100
+Sol,arith15,0,64,0.13,100
+Sol,arith15,0,256,0.15,100
+Sol,arith15,0,300,0.21,100
+Sol,arith15,0,1024,0.21,100
+Sol,arith15,10,0,0.19,100
+Sol,arith15,10,64,0.18,100
+Sol,arith15,10,256,0.25,100
+Sol,arith15,10,1024,0.24,100
+Sol,nhop4,0,0,0.04,150
+Sol,nhop4,0,4,0.0133,150
+Sol,nhop4,0,16,0.0133,150
+Sol,nhop4,0,64,0.0267,150
+Sol,nhop4,0,256,0.04,150
+Sol,nhop4,0,1024,0.0267,150
+Sol,nhop4,10,0,0.0143,140
+Sol,nhop4,10,64,0.0429,140
+Sol,nhop4,10,256,0.0071,140
+Sol,nhop4,10,1024,0.0643,140
+Sol,aime,0,0,0.088,216
+Sol,aime,0,300,0.1468,218
+Sol,aime,10,0,0.0917,218
+Sol,aime,10,64,0.1193,218
+Sol,aime,10,256,0.1284,218
+Sol,aime,10,1024,0.1422,218
+Sol,aimepp,0,0,0.2647,34
+Sol,aimepp,0,4,0.2647,34
+Sol,aimepp,0,16,0.1765,34
+Sol,aimepp,0,64,0.2353,34
+Sol,aimepp,0,256,0.2353,34
+Sol,aimepp,0,300,0.3529,34
+Sol,aimepp,0,1024,0.3235,34
+Sol,aimepp,10,0,0.2647,34
+Sol,aimepp,10,64,0.2941,34
+Sol,aimepp,10,256,0.3235,34
+Sol,aimepp,10,1024,0.3529,34
+Opus 4.5,arith15,0,0,0.05,100
+Opus 4.5,arith15,0,4,0.0909,99
+Opus 4.5,arith15,0,16,0.13,100
+Opus 4.5,arith15,0,64,0.11,100
+Opus 4.5,arith15,0,256,0.13,100
+Opus 4.5,arith15,0,300,0.13,100
+Opus 4.5,arith15,0,1024,0.11,100
+Opus 4.5,arith15,10,0,0.12,100
+Opus 4.5,arith15,10,64,0.13,100
+Opus 4.5,arith15,10,256,0.14,100
+Opus 4.5,arith15,10,1024,0.12,100
+Opus 4.5,nhop4,0,0,0.0134,149
+Opus 4.5,nhop4,0,4,0.0134,149
+Opus 4.5,nhop4,0,16,0.02,150
+Opus 4.5,nhop4,0,64,0.0333,150
+Opus 4.5,nhop4,0,256,0.0333,150
+Opus 4.5,nhop4,0,1024,0.02,150
+Opus 4.5,nhop4,10,0,0.0357,140
+Opus 4.5,nhop4,10,64,0.0286,140
+Opus 4.5,nhop4,10,256,0.0143,140
+Opus 4.5,nhop4,10,1024,0.0071,140
+Opus 4.5,aime,0,0,0.3028,218
+Opus 4.5,aime,0,300,0.3165,218
+Opus 4.5,aime,10,0,0.3028,218
+Opus 4.5,aime,10,64,0.3119,218
+Opus 4.5,aime,10,256,0.3394,218
+Opus 4.5,aime,10,1024,0.344,218
+Opus 4.5,aimepp,0,0,0.2059,34
+Opus 4.5,aimepp,0,4,0.2353,34
+Opus 4.5,aimepp,0,16,0.1765,34
+Opus 4.5,aimepp,0,64,0.2424,33
+Opus 4.5,aimepp,0,256,0.2647,34
+Opus 4.5,aimepp,0,300,0.2424,33
+Opus 4.5,aimepp,0,1024,0.2941,34
+Opus 4.5,aimepp,10,0,0.2941,34
+Opus 4.5,aimepp,10,64,0.2353,34
+Opus 4.5,aimepp,10,256,0.2941,34
+Opus 4.5,aimepp,10,1024,0.3333,33
+DeepSeek V3.2,arith15,0,0,0.01,100
+DeepSeek V3.2,arith15,0,4,0.01,100
+DeepSeek V3.2,arith15,0,16,0.01,100
+DeepSeek V3.2,arith15,0,64,0.03,100
+DeepSeek V3.2,arith15,0,256,0.05,100
+DeepSeek V3.2,arith15,0,300,0.04,100
+DeepSeek V3.2,arith15,0,1024,0.03,100
+DeepSeek V3.2,arith15,10,0,0.03,100
+DeepSeek V3.2,arith15,10,64,0.02,100
+DeepSeek V3.2,arith15,10,256,0.03,100
+DeepSeek V3.2,arith15,10,1024,0.03,100
+DeepSeek V3.2,nhop4,0,0,0.02,150
+DeepSeek V3.2,nhop4,0,4,0.0067,150
+DeepSeek V3.2,nhop4,0,16,0.0067,150
+DeepSeek V3.2,nhop4,0,64,0.0267,150
+DeepSeek V3.2,nhop4,0,256,0.02,150
+DeepSeek V3.2,nhop4,0,1024,0.0333,150
+DeepSeek V3.2,nhop4,10,0,0.0143,140
+DeepSeek V3.2,nhop4,10,64,0.0143,140
+DeepSeek V3.2,nhop4,10,256,0.0143,140
+DeepSeek V3.2,nhop4,10,1024,0.0071,140
+DeepSeek V3.2,aime,0,0,0.0323,217
+DeepSeek V3.2,aime,0,4,0.011,91
+DeepSeek V3.2,aime,0,16,0.0361,83
+DeepSeek V3.2,aime,0,64,0.0112,89
+DeepSeek V3.2,aime,0,256,0.0,74
+DeepSeek V3.2,aime,0,300,0.0275,218
+DeepSeek V3.2,aime,0,1024,0.0263,76
+DeepSeek V3.2,aime,10,0,0.0183,218
+DeepSeek V3.2,aime,10,64,0.0505,218
+DeepSeek V3.2,aime,10,256,0.0275,218
+DeepSeek V3.2,aime,10,1024,0.0275,218
+DeepSeek V3.2,aimepp,0,0,0.0588,34
+DeepSeek V3.2,aimepp,0,4,0.0588,34
+DeepSeek V3.2,aimepp,0,16,0.1471,34
+DeepSeek V3.2,aimepp,0,64,0.1176,34
+DeepSeek V3.2,aimepp,0,256,0.1176,34
+DeepSeek V3.2,aimepp,0,300,0.1471,34
+DeepSeek V3.2,aimepp,0,1024,0.1176,34
+DeepSeek V3.2,aimepp,10,0,0.0882,34
+DeepSeek V3.2,aimepp,10,64,0.0588,34
+DeepSeek V3.2,aimepp,10,256,0.0588,34
+DeepSeek V3.2,aimepp,10,1024,0.1471,34
