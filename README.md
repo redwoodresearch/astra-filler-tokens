@@ -109,13 +109,14 @@ Each has figures under `<tag>/figs/` and, where an analysis module exists, the c
   0.51, AIME/HMMT 0.34 → 0.75 at 4,096 dots, paired 17/0, 48/4, 89/1; identical to 3-shot. The figure shows 0-, 3- and
   10-shot together.
   `fewshot10_others` is the same 10-shot protocol for Sol, Opus 4.5 and DeepSeek V3.2 with doses capped at 1,024
-  (`uv run -m nf.fewshot_astra others`, figure `results/other/fewshot10_others/figs/fewshot10_others.png`):
-  demonstrations raise the no-filler arithmetic baselines (Sol 0.08 → 0.19, Opus 4.5 0.05 → 0.12) and leave each
-  model's filler response where it was (Sol small, Opus 4.5 marginal on AIME, DeepSeek none). The Anthropic path
+  (`uv run -m nf.fewshot_astra others`, figure `results/other/fewshot10_others/figs/fewshot10_others.png`; N-hop at
+  2 hops, where these models have signal, with the 4-hop cells also in the logs): demonstrations raise the no-filler
+  baselines (arithmetic: Sol 0.08 → 0.19, Opus 4.5 0.05 → 0.12; Sol 2-hop 0.19 → 0.38) and leave each model's filler
+  response where it was (Sol small, Opus 4.5 marginal on AIME, DeepSeek none). The Anthropic path
   caches the demonstration prefix (`cache_control` on the last demo).
   `ideal_fewshot10` (`uv run -m nf.ideal fewshot10`) redraws the post's four cross-model panels (4-hop N-hop, 15-op
   arithmetic, AIME-Plus-Plus AIME tier, AIME/HMMT) from the 10-shot runs: Astra to 4,096 dots, the other three to
-  1,024, Opus 5 absent.
+  1,024, Opus 5 absent; the N-hop panel has Astra at 4 hops and the others at 2, as in the post.
 - Ablations: `fewshot`, `fewshot3` (few-shot prompting; `uv run -m nf.fewshot3`), `arith_shape` (chain vs balanced
   arithmetic; `uv run -m nf.arith_shape`), `framing.csv` (dots described as thinking space; `uv run -m nf.framing`),
   `filler_methods.csv` (paired tests between filler methods at matched token counts; `uv run -m nf.filler_methods`),

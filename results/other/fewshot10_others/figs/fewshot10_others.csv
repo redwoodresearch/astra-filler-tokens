@@ -10,16 +10,16 @@ Sol,arith15,10,0,0.19,100
 Sol,arith15,10,64,0.18,100
 Sol,arith15,10,256,0.25,100
 Sol,arith15,10,1024,0.24,100
-Sol,nhop4,0,0,0.04,150
-Sol,nhop4,0,4,0.0133,150
-Sol,nhop4,0,16,0.0133,150
-Sol,nhop4,0,64,0.0267,150
-Sol,nhop4,0,256,0.04,150
-Sol,nhop4,0,1024,0.0267,150
-Sol,nhop4,10,0,0.0143,140
-Sol,nhop4,10,64,0.0429,140
-Sol,nhop4,10,256,0.0071,140
-Sol,nhop4,10,1024,0.0643,140
+Sol,nhop4,0,0,0.1933,150
+Sol,nhop4,0,4,0.1667,150
+Sol,nhop4,0,16,0.1667,150
+Sol,nhop4,0,64,0.2,150
+Sol,nhop4,0,256,0.3533,150
+Sol,nhop4,0,1024,0.3333,150
+Sol,nhop4,10,0,0.3786,140
+Sol,nhop4,10,64,0.3643,140
+Sol,nhop4,10,256,0.4571,140
+Sol,nhop4,10,1024,0.4357,140
 Sol,aime,0,0,0.088,216
 Sol,aime,0,300,0.1468,218
 Sol,aime,10,0,0.0917,218
@@ -48,16 +48,16 @@ Opus 4.5,arith15,10,0,0.12,100
 Opus 4.5,arith15,10,64,0.13,100
 Opus 4.5,arith15,10,256,0.14,100
 Opus 4.5,arith15,10,1024,0.12,100
-Opus 4.5,nhop4,0,0,0.0134,149
-Opus 4.5,nhop4,0,4,0.0134,149
-Opus 4.5,nhop4,0,16,0.02,150
-Opus 4.5,nhop4,0,64,0.0333,150
-Opus 4.5,nhop4,0,256,0.0333,150
-Opus 4.5,nhop4,0,1024,0.02,150
-Opus 4.5,nhop4,10,0,0.0357,140
-Opus 4.5,nhop4,10,64,0.0286,140
-Opus 4.5,nhop4,10,256,0.0143,140
-Opus 4.5,nhop4,10,1024,0.0071,140
+Opus 4.5,nhop4,0,0,0.1133,150
+Opus 4.5,nhop4,0,4,0.1133,150
+Opus 4.5,nhop4,0,16,0.1333,150
+Opus 4.5,nhop4,0,64,0.14,150
+Opus 4.5,nhop4,0,256,0.1467,150
+Opus 4.5,nhop4,0,1024,0.1133,150
+Opus 4.5,nhop4,10,0,0.1357,140
+Opus 4.5,nhop4,10,64,0.1214,140
+Opus 4.5,nhop4,10,256,0.1857,140
+Opus 4.5,nhop4,10,1024,0.1786,140
 Opus 4.5,aime,0,0,0.3028,218
 Opus 4.5,aime,0,300,0.3165,218
 Opus 4.5,aime,10,0,0.3028,218
@@ -86,16 +86,16 @@ DeepSeek V3.2,arith15,10,0,0.03,100
 DeepSeek V3.2,arith15,10,64,0.02,100
 DeepSeek V3.2,arith15,10,256,0.03,100
 DeepSeek V3.2,arith15,10,1024,0.03,100
-DeepSeek V3.2,nhop4,0,0,0.02,150
-DeepSeek V3.2,nhop4,0,4,0.0067,150
-DeepSeek V3.2,nhop4,0,16,0.0067,150
-DeepSeek V3.2,nhop4,0,64,0.0267,150
-DeepSeek V3.2,nhop4,0,256,0.02,150
-DeepSeek V3.2,nhop4,0,1024,0.0333,150
-DeepSeek V3.2,nhop4,10,0,0.0143,140
-DeepSeek V3.2,nhop4,10,64,0.0143,140
-DeepSeek V3.2,nhop4,10,256,0.0143,140
-DeepSeek V3.2,nhop4,10,1024,0.0071,140
+DeepSeek V3.2,nhop4,0,0,0.0267,150
+DeepSeek V3.2,nhop4,0,4,0.0267,150
+DeepSeek V3.2,nhop4,0,16,0.0533,150
+DeepSeek V3.2,nhop4,0,64,0.0733,150
+DeepSeek V3.2,nhop4,0,256,0.04,150
+DeepSeek V3.2,nhop4,0,1024,0.0067,150
+DeepSeek V3.2,nhop4,10,0,0.0286,140
+DeepSeek V3.2,nhop4,10,64,0.0214,140
+DeepSeek V3.2,nhop4,10,256,0.0214,140
+DeepSeek V3.2,nhop4,10,1024,0.0143,140
 DeepSeek V3.2,aime,0,0,0.0323,217
 DeepSeek V3.2,aime,0,4,0.011,91
 DeepSeek V3.2,aime,0,16,0.0361,83

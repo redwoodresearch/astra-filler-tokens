@@ -115,6 +115,8 @@ def others():
     rows = []
     for i, (model, mlab) in enumerate(OTHERS.items()):
         for j, (key, (task, depth, ztag, title)) in enumerate(PANELS.items()):
+            if task == "nhop":  # the other models only have signal at 2 hops (the post's mixed-hop comparison)
+                depth, title = 2, "N-hop natural facts, 2 hops"
             ax = axes[i, j]
             for label, d, col, mk in (
                 ("0-shot (paper)", _select(_valid_model(zero[ztag], model, 1024), task, depth), "tab:gray", "o"),

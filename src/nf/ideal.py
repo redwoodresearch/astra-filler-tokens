@@ -157,14 +157,20 @@ def main(nhop_task: str = "nhop"):
 
 
 def fewshot10():
-    """The four cross-model panels (2, 4, 5, 6) with ten same-dose gold demonstrations: Astra from `fewshot10_astra`
-    (doses to 4,096), Sol / Opus 4.5 / DeepSeek from `fewshot10_others` (doses to 1,024); Opus 5 not run (it refuses
-    few-shot dot prompts). Writes results/ideal_fewshot10/."""
+    """The four cross-model panels with ten same-dose gold demonstrations: Astra from `fewshot10_astra` (doses to
+    4,096; N-hop at 4 hops), Sol / Opus 4.5 / DeepSeek from `fewshot10_others` (doses to 1,024; N-hop at 2 hops, where
+    those models have signal, as in the post's mixed-hop figure); Opus 5 not run (it refuses few-shot dot prompts).
+    Writes results/ideal_fewshot10/."""
     out = ROOT / "results" / "other" / "ideal_fewshot10"
     out.mkdir(parents=True, exist_ok=True)
     df = _valid(pd.concat([load("fewshot10_astra"), load("fewshot10_others")]).reset_index(drop=True))
     for name, d0, title, loc in [
-        ("nhop_models_4hop", df[(df.task == "nhop") & (df.depth == 4)], "N-hop natural facts, 4 hops", "upper left"),
+        (
+            "nhop_models",
+            df[(df.task == "nhop") & (df.depth == np.where(df.model_eff == "gpt-6-astra:low", 4, 2))],
+            "N-hop natural facts (Astra 4 hops, others 2 hops)",
+            "upper left",
+        ),
         ("arith15_models", df[(df.task == "arith") & (df.depth == 15)], "Gen-Arithmetic, 15 ops", "upper left"),
         (
             "aimepp_models",
