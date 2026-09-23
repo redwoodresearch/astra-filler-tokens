@@ -1,6 +1,7 @@
 """Few-shot elicitation check for gpt-6-astra: does the filler dose-response survive when the no-CoT format is fully
 demonstrated? Compares the paper's zero-shot runs with 3-shot runs (three gold-answer demonstrations from held-out
-problems, each carrying the same dot count as the query; `nf.run --shots 3`, tag `fewshot_astra`) on four tasks.
+problems, each carrying the same dot count as the query; `nf.run --shots 3`, tag `fewshot_astra`; 10-shot: tag
+`fewshot10_astra`, N-hop query set cut to 140) on four tasks.
 Writes <fewshot_astra>/figs/fewshot_astra.png and fewshot_astra.csv.
 
   uv run -m nf.fewshot_astra
@@ -53,6 +54,7 @@ def _curve(d):
 
 def main():
     few = _valid(load("fewshot_astra"))
+    few10 = _valid(load("fewshot10_astra"))
     zero = {t: _valid(load(t)) for t in {p[2] for p in PANELS.values()}}
     fig, axes = plt.subplots(2, 2, figsize=(10, 7.5), constrained_layout=True)
     rows = []
@@ -60,6 +62,7 @@ def main():
         for label, d, col, mk in (
             ("0-shot (paper)", _select(zero[ztag], task, depth), "tab:gray", "o"),
             ("3-shot, same-dose gold demos", _select(few, task, depth), "tab:red", "s"),
+            ("10-shot, same-dose gold demos", _select(few10, task, depth), "tab:blue", "^"),
         ):
             g = _curve(d)
             ax.errorbar(
@@ -78,7 +81,7 @@ def main():
                 rows.append(
                     {
                         "panel": key,
-                        "shots": 0 if label.startswith("0") else 3,
+                        "shots": int(label.split("-")[0]),
                         "k": int(r.k),
                         "acc": round(r.acc, 4),
                         "n": int(r.n),
@@ -87,7 +90,7 @@ def main():
         ax.set_xscale("symlog", linthresh=4)
         ax.set(xlim=(-0.5, MAX_K * 1.6), ylim=(-0.02, 1.02), title=title, xlabel="filler tokens", ylabel="accuracy")
         ax.legend(frameon=False, fontsize=8, loc="lower right")
-    fig.suptitle("gpt-6-astra, no-CoT: zero-shot vs 3-shot (same-dose gold demonstrations)", fontsize=12)
+    fig.suptitle("gpt-6-astra, no-CoT: zero-shot vs 3- and 10-shot (same-dose gold demonstrations)", fontsize=12)
     out = tag_dir("fewshot_astra") / "figs"
     out.mkdir(parents=True, exist_ok=True)
     fig.savefig(out / "fewshot_astra.png", dpi=160)

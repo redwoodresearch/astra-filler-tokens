@@ -105,6 +105,9 @@ Each has figures under `<tag>/figs/` and, where an analysis module exists, the c
   no-filler baseline (15-op arithmetic 0.50 → 0.76, 4-hop 0.08 → 0.19, AIME/HMMT 0.29 → 0.38) but leave the plateau and
   the dose-response unchanged (paired 4,096 dots vs none: 17/1, 49/4, 80/1 wins/losses); so the low-dose part of the
   zero-shot gain is partly format elicitation, the high-dose part is not. 100% compliant, 0 hidden-reasoning calls.
+  `fewshot10_astra` repeats it with ten demonstrations (N-hop query set cut to 140): arith 0.75 → 0.92, 4-hop 0.20 →
+  0.51, AIME/HMMT 0.34 → 0.75 at 4,096 dots, paired 17/0, 48/4, 89/1; identical to 3-shot. The figure shows 0-, 3- and
+  10-shot together.
 - Ablations: `fewshot`, `fewshot3` (few-shot prompting; `uv run -m nf.fewshot3`), `arith_shape` (chain vs balanced
   arithmetic; `uv run -m nf.arith_shape`), `framing.csv` (dots described as thinking space; `uv run -m nf.framing`),
   `filler_methods.csv` (paired tests between filler methods at matched token counts; `uv run -m nf.filler_methods`),
