@@ -97,6 +97,14 @@ Each has figures under `<tag>/figs/` and, where an analysis module exists, the c
 - Controls on other model families: `dots_plain` (gpt-4o, Llama 3.3, DeepSeek V3), `dots_hybrid`, `dots_rep` (Opus 5,
   Gemini 2.5/3.5/3.8 Flash, Qwen 3.5, Kimi K2.6, Grok 4.20), `fable_dots`, `fable_filler` (Claude Fable 5.1).
 - Non-toy benchmarks: `bench_dots`, `bench_filler2` (GSM8K, GPQA, MMLU-Pro).
+- Few-shot elicitation check for Astra: `fewshot_astra` (`uv run -m nf.fewshot_astra`; figure
+  `results/other/fewshot_astra/figs/fewshot_astra.png`, per-cell numbers in `fewshot_astra.csv`). Same prompted no-CoT
+  protocol as the post, plus three gold-answer demonstrations from held-out problems, each carrying the same dot count
+  as the query (`nf.run --shots 3`; arithmetic demos from seed 1, N-hop demos from the last three problems of the hop
+  count with the query set cut to 147, AIME/HMMT demos from AIME-Plus-Plus and vice versa). Demonstrations raise the
+  no-filler baseline (15-op arithmetic 0.50 → 0.76, 4-hop 0.08 → 0.19, AIME/HMMT 0.29 → 0.38) but leave the plateau and
+  the dose-response unchanged (paired 4,096 dots vs none: 17/1, 49/4, 80/1 wins/losses); so the low-dose part of the
+  zero-shot gain is partly format elicitation, the high-dose part is not. 100% compliant, 0 hidden-reasoning calls.
 - Ablations: `fewshot`, `fewshot3` (few-shot prompting; `uv run -m nf.fewshot3`), `arith_shape` (chain vs balanced
   arithmetic; `uv run -m nf.arith_shape`), `framing.csv` (dots described as thinking space; `uv run -m nf.framing`),
   `filler_methods.csv` (paired tests between filler methods at matched token counts; `uv run -m nf.filler_methods`),

@@ -1,0 +1,34 @@
+{
+ "tag": "fewshot_astra",
+ "models": [
+  "gpt-6-astra:low"
+ ],
+ "depths": [
+  1
+ ],
+ "n": 218,
+ "seed": 0,
+ "tasks": [
+  "aime"
+ ],
+ "shots": 3,
+ "arms": [
+  "B",
+  "XB"
+ ],
+ "ks": [
+  0,
+  64,
+  256,
+  1024,
+  4096
+ ],
+ "cap_mult": 1.3,
+ "cap_add": 32,
+ "no_cap": false,
+ "concurrency": 40,
+ "log_every": 200,
+ "dry_run": false,
+ "estimate": false,
+ "key_env": null
+}
