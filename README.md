@@ -72,7 +72,7 @@ on the fly by `src/nf/tasks.py` (a port of Greenblatt's generator: ops `+ - * //
 | Astra, N-hop, accuracy vs hops per filler dose | `uv run -m nf.nhop nhop` | `results/main/nhop_astra.png` |
 | N-hop across models (4 hops; Astra 4 hops vs others 2 hops; 2 hops; vs hops) | `uv run -m nf.ideal nhop` | `results/main/ideal/nhop_models_*.png` |
 | Gen-Arithmetic 15 ops, AIME-Plus-Plus, AIME/HMMT, five models vs filler tokens | `uv run -m nf.ideal nhop` | `results/main/ideal/{arith15,aimepp,aime}_models.png` |
-| Kendall tau table | `uv run -m nf.kendall_models` | `results/main/kendall_models.csv` |
+| Kendall tau table | `uv run -m nf.kendall_models` | `results/main/kendall_models.{csv,md}` (`.md` is the appendix layout) |
 | HLE / LiveBench bars and tables | `uv run -m nf.bench_hard`, `uv run -m nf.bench_tables` | `results/main/bench_hard/figs/` |
 | No-CoT vs filler vs reasoning at effort low | `uv run -m nf.reasoning_low` | `results/main/reasoning_low/figs/reasoning_low.png` |
 | Filler position (after / before / model-emitted) | `uv run -m nf.position` | `results/main/position_astra/position_astra.png` |
@@ -102,7 +102,7 @@ prefix (`cache_control` on the last demo). 100% compliant, 0 hidden-reasoning ca
 | The post's four cross-model panels, 10-shot (N-hop: Astra 4 hops, others 2) | `uv run -m nf.ideal fewshot10` | `results/other/ideal_fewshot10/{nhop,arith15,aimepp,aime}_models.png` |
 | Astra 0- vs 3- vs 10-shot, four tasks | `uv run -m nf.fewshot_astra` | `results/other/fewshot_astra/figs/fewshot_astra.png` (+ `.csv`) |
 | Sol / Opus 4.5 / DeepSeek 0- vs 10-shot, 3x4 grid | `uv run -m nf.fewshot_astra others` | `results/other/fewshot10_others/figs/fewshot10_others.png` (+ `.csv`) |
-| Kendall tau table, 10-shot | `uv run -m nf.kendall_models fewshot10` | `results/other/ideal_fewshot10/kendall_models_fewshot10.csv` |
+| Kendall tau table, 10-shot | `uv run -m nf.kendall_models fewshot10` | `results/other/ideal_fewshot10/kendall_models_fewshot10.{csv,md}` |
 
 Logs: `results/other/fewshot_astra` (3-shot), `fewshot10_astra` (10-shot, doses to 4,096), `fewshot10_others` (Sol,
 Opus 4.5, DeepSeek V3.2 at 10-shot, doses to 1,024; N-hop at 2 and 4 hops). Opus 5 was not run (it refuses few-shot dot
