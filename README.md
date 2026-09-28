@@ -34,7 +34,8 @@ Every analysis below runs from the stored logs without any API key.
 ## Layout
 
 ```
-src/nf/            runner (run.py), prompts, tasks/generators, graders, analysis + figure modules
+src/nf/            runner (run.py), prompts, tasks/generators, graders, log loader (analyze.py)
+src/nf/analysis/   analysis + figure modules, one per experiment (`uv run -m nf.analysis.<name>`)
 scripts/           dataset builders (HLE/LiveBench, N-hop composition and rewrite), HLE judge, CoT checks, probes
 drivers/           shell drivers for every batch of runs
 data/              task datasets (see below) and configs
@@ -69,17 +70,17 @@ on the fly by `src/nf/tasks.py` (a port of Greenblatt's generator: ops `+ - * //
 
 | figure | command | output |
 |---|---|---|
-| Astra, N-hop, accuracy vs hops per filler dose | `uv run -m nf.nhop nhop` | `results/main/nhop_astra.png` |
-| N-hop across models (4 hops; Astra 4 hops vs others 2 hops; 2 hops; vs hops) | `uv run -m nf.ideal nhop` | `results/main/ideal/nhop_models_*.png` |
-| Gen-Arithmetic 15 ops, AIME-Plus-Plus, AIME/HMMT, five models vs filler tokens | `uv run -m nf.ideal nhop` | `results/main/ideal/{arith15,aimepp,aime}_models.png` |
-| Kendall tau table | `uv run -m nf.kendall_models` | `results/main/kendall_models.{csv,md}` (`.md` is the appendix layout) |
-| HLE / LiveBench bars and tables | `uv run -m nf.bench_hard`, `uv run -m nf.bench_tables` | `results/main/bench_hard/figs/` |
-| No-CoT vs filler vs reasoning at effort low | `uv run -m nf.reasoning_low` | `results/main/reasoning_low/figs/reasoning_low.png` |
-| Filler position (after / before / model-emitted) | `uv run -m nf.position` | `results/main/position_astra/position_astra.png` |
-| 4x5 grid, all math sets, counting/dots/repeats | `uv run -m nf.greenblatt greenblatt greenblatt2 --compact` | `results/main/greenblatt/figs/greenblatt_replication_4x4.png` |
+| Astra, N-hop, accuracy vs hops per filler dose | `uv run -m nf.analysis.nhop nhop` | `results/main/nhop_astra.png` |
+| N-hop across models (4 hops; Astra 4 hops vs others 2 hops; 2 hops; vs hops) | `uv run -m nf.analysis.ideal nhop` | `results/main/ideal/nhop_models_*.png` |
+| Gen-Arithmetic 15 ops, AIME-Plus-Plus, AIME/HMMT, five models vs filler tokens | `uv run -m nf.analysis.ideal nhop` | `results/main/ideal/{arith15,aimepp,aime}_models.png` |
+| Kendall tau table | `uv run -m nf.analysis.kendall_models` | `results/main/kendall_models.{csv,md}` (`.md` is the appendix layout) |
+| HLE / LiveBench bars and tables | `uv run -m nf.analysis.bench_hard`, `uv run -m nf.analysis.bench_tables` | `results/main/bench_hard/figs/` |
+| No-CoT vs filler vs reasoning at effort low | `uv run -m nf.analysis.reasoning_low` | `results/main/reasoning_low/figs/reasoning_low.png` |
+| Filler position (after / before / model-emitted) | `uv run -m nf.analysis.position` | `results/main/position_astra/position_astra.png` |
+| 4x5 grid, all math sets, counting/dots/repeats | `uv run -m nf.analysis.greenblatt greenblatt greenblatt2 --compact` | `results/main/greenblatt/figs/greenblatt_replication_4x4.png` |
 | Example prompts | `results/main/example_prompts.md`; N-hop rewrite examples in `nhop_rewrite_examples.md` | |
 
-`uv run -m nf.ideal nhopnl` / `uv run -m nf.nhop nhopnl` produce the same N-hop figures from the rewritten (nested-English)
+`uv run -m nf.analysis.ideal nhopnl` / `uv run -m nf.analysis.nhop nhopnl` produce the same N-hop figures from the rewritten (nested-English)
 phrasing (`results/main/ideal_nl/`, `nhop_astra_nl.png`); the two phrasings score the same within noise.
 
 Result tags in `results/main/`: `nhop` (N-hop, all models, both phrasings), `greenblatt` (AIME/HMMT + Gen-Arithmetic),
@@ -99,10 +100,10 @@ prefix (`cache_control` on the last demo). 100% compliant, 0 hidden-reasoning ca
 
 | figure | command | output |
 |---|---|---|
-| The post's four cross-model panels, 10-shot (N-hop: Astra 4 hops, others 2) | `uv run -m nf.ideal fewshot10` | `results/other/ideal_fewshot10/{nhop,arith15,aimepp,aime}_models.png` |
-| Astra 0- vs 3- vs 10-shot, four tasks | `uv run -m nf.fewshot_astra` | `results/other/fewshot_astra/figs/fewshot_astra.png` (+ `.csv`) |
-| Sol / Opus 4.5 / DeepSeek 0- vs 10-shot, 3x4 grid | `uv run -m nf.fewshot_astra others` | `results/other/fewshot10_others/figs/fewshot10_others.png` (+ `.csv`) |
-| Kendall tau table, 10-shot | `uv run -m nf.kendall_models fewshot10` | `results/other/ideal_fewshot10/kendall_models_fewshot10.{csv,md}` |
+| The post's four cross-model panels, 10-shot (N-hop: Astra 4 hops, others 2) | `uv run -m nf.analysis.ideal fewshot10` | `results/other/ideal_fewshot10/{nhop,arith15,aimepp,aime}_models.png` |
+| Astra 0- vs 3- vs 10-shot, four tasks | `uv run -m nf.analysis.fewshot_astra` | `results/other/fewshot_astra/figs/fewshot_astra.png` (+ `.csv`) |
+| Sol / Opus 4.5 / DeepSeek 0- vs 10-shot, 3x4 grid | `uv run -m nf.analysis.fewshot_astra others` | `results/other/fewshot10_others/figs/fewshot10_others.png` (+ `.csv`) |
+| Kendall tau table, 10-shot | `uv run -m nf.analysis.kendall_models fewshot10` | `results/other/ideal_fewshot10/kendall_models_fewshot10.{csv,md}` |
 
 Logs: `results/other/fewshot_astra` (3-shot), `fewshot10_astra` (10-shot, doses to 4,096), `fewshot10_others` (Sol,
 Opus 4.5, DeepSeek V3.2 at 10-shot, doses to 1,024; N-hop at 2 and 4 hops). Opus 5 was not run (it refuses few-shot dot
@@ -139,22 +140,22 @@ Each has figures under `<tag>/figs/` and, where an analysis module exists, the c
   stack, parity): `main`, `tightcap`, `fillerD_*`, `suite`, `suite_deep`, `depth_sweep`; dose curves `dots_dose`,
   `dots_tasks`, `prefix_tasks`, `dots_before` (positional control).
 - Many-model sweeps and release-date / time-horizon analyses: `sweep_openai`, `sweep_or`, `sweep_ant`, `filler_trend`,
-  `horizon` (`uv run -m nf.horizon`), `th_real.csv` (`uv run -m nf.th_real`, rough time horizons with filler).
+  `horizon` (`uv run -m nf.analysis.horizon`), `th_real.csv` (`uv run -m nf.analysis.th_real`, rough time horizons with filler).
 - Controls on other model families: `dots_plain` (gpt-4o, Llama 3.3, DeepSeek V3), `dots_hybrid`, `dots_rep` (Opus 5,
   Gemini 2.5/3.5/3.8 Flash, Qwen 3.5, Kimi K2.6, Grok 4.20), `fable_dots`, `fable_filler` (Claude Fable 5.1).
 - Non-toy benchmarks: `bench_dots`, `bench_filler2` (GSM8K, GPQA, MMLU-Pro).
 - Few-shot elicitation: `fewshot_astra`, `fewshot10_astra`, `fewshot10_others`, `ideal_fewshot10` (see the few-shot
   section above).
-- Ablations: `fewshot`, `fewshot3` (few-shot prompting; `uv run -m nf.fewshot3`), `arith_shape` (chain vs balanced
-  arithmetic; `uv run -m nf.arith_shape`), `framing.csv` (dots described as thinking space; `uv run -m nf.framing`),
-  `filler_methods.csv` (paired tests between filler methods at matched token counts; `uv run -m nf.filler_methods`),
+- Ablations: `fewshot`, `fewshot3` (few-shot prompting; `uv run -m nf.analysis.fewshot3`), `arith_shape` (chain vs balanced
+  arithmetic; `uv run -m nf.analysis.arith_shape`), `framing.csv` (dots described as thinking space; `uv run -m nf.analysis.framing`),
+  `filler_methods.csv` (paired tests between filler methods at matched token counts; `uv run -m nf.analysis.filler_methods`),
   `reasoning_low_pilot`, `probe_*`, `smoke_suite`.
 
 ## Caveats worth knowing before reusing the numbers
 
 - Astra's training cutoff is 2026-04-30. AIME/HMMT (latest Feb 2026), HLE and the public LiveBench items predate it;
   AIME-Plus-Plus (posted 2026-08-26) and everything generated locally do not.
-- Exclusions are small and audited (`uv run -m nf.exclusions`; details and the hidden-reasoning check in `docs/EXCLUSIONS.md`): of 122,598 stored calls behind the post's figures,
+- Exclusions are small and audited (`uv run -m nf.analysis.exclusions`; details and the hidden-reasoning check in `docs/EXCLUSIONS.md`): of 122,598 stored calls behind the post's figures,
   835 (0.7%) are excluded — 746 Opus 5 refusals, 79 truncated outputs, 10 calls where the OpenAI/OpenRouter API reported
   hidden reasoning tokens. Anthropic calls run with thinking disabled, so none are excluded on the reasoning-token
   estimate (which is a tokenizer artefact on long answers); OpenAI/OpenRouter calls with any reasoning tokens are dropped.

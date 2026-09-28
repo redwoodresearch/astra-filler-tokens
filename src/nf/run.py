@@ -355,7 +355,12 @@ async def main(a):
         pr = build(p, arm, k)
         if a.shots:
             pr = with_shots(pr, p, arm, k, a.shots)
-        i = n_tokens(pr.developer) + n_tokens(pr.user) + 20 + sum(n_tokens(su) + n_tokens(sa) + 8 for su, sa in pr.shots)
+        i = (
+            n_tokens(pr.developer)
+            + n_tokens(pr.user)
+            + 20
+            + sum(n_tokens(su) + n_tokens(sa) + 8 for su, sa in pr.shots)
+        )
         o = n_tokens(pr.expected_prefix + "\nANSWER: 1") + 3
         est_in += i
         est_out += o
